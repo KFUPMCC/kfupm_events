@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "634999464299",
+    "firebase_url": "https://ccevents-5dd07-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "ccevents-5dd07",
+    "storage_bucket": "ccevents-5dd07.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634999464299:android:8dbd8d2803ef0c5f69ec2e",
+        "android_client_info": {
+          "package_name": "com.example.kfupm_events"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "634999464299-2ic9q8iossu77vqq1rncissagp46m2qd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaRNc9-JBC6eKlsYIF5DFRf0IwPLJhjcY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "634999464299-2ic9q8iossu77vqq1rncissagp46m2qd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "634999464299-nvabhl25fq8n17gpdio2j7cshavfurqc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.kfupmevents"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
