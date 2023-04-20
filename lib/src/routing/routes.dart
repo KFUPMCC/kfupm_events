@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './views/home.dart';
-import './views/login.dart';
+import '../features/main/presentation/home.dart';
+import '../features/login/login.dart';
 
 final Map<String, WidgetBuilder> routes = {
   '/home': (context) => Home(),

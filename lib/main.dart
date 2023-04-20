@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:kfupm_events/theme/app_theme.dart';
+import 'package:kfupm_events/src/theme/app_theme.dart';
 import 'firebase_options.dart';
 
 //I'll just make it run the app for now, we will add future later
@@ -120,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
