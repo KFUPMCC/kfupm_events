@@ -12,7 +12,7 @@ class LoginButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: () {
         // Add your onPressed code here
-        context.goNamed(AppRoute.main.name);
+        context.goNamed(AppRoute.register.name);
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: kGreenColor,

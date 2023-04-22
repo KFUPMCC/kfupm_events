@@ -20,8 +20,8 @@ final goRouter = GoRouter(
   routes: [
     GoRoute(
         path: '/',
-        name: AppRoute.login.name,
-        builder: (context, state) => const LoginPage(),
+        name: AppRoute.main.name,
+        builder: (context, state) => const MainPage(),
         routes: [
           GoRoute(
             path: 'events',
@@ -29,9 +29,9 @@ final goRouter = GoRouter(
             builder: (context, state) => const EventsPage(),
           ),
           GoRoute(
-            path: 'main',
-            name: AppRoute.main.name,
-            builder: (context, state) => const MainPage(),
+            path: 'login',
+            name: AppRoute.login.name,
+            builder: (context, state) => const LoginPage(),
           ),
           GoRoute(
             path: 'register',
