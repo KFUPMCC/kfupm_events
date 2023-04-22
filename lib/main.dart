@@ -4,7 +4,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:kfupm_events/src/routing/routes.dart';
-import 'package:kfupm_events/src/theme/app_theme.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -38,7 +37,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: goRouter,
       title: 'KFUPM Events',
-      theme: AppTheme.theme(),
       debugShowCheckedModeBanner: false,
     );
   }

@@ -9,10 +9,10 @@ class AppTheme {
   static ThemeData theme() {
     return isDark
         ? ThemeData.dark().copyWith(
-            buttonTheme: ButtonThemeData(
+            buttonTheme: const ButtonThemeData(
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
           ))
-        : ThemeData(iconTheme: IconThemeData(color: Colors.white));
+        : ThemeData(iconTheme: const IconThemeData(color: Colors.white));
   }
 }
