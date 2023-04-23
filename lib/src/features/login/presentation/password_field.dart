@@ -1,10 +1,12 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 class PasswordField extends StatefulWidget {
   const PasswordField({
-    super.key,
-  });
-
+    Key? key,
+    required this.controller,
+  }) : super(key: key);
+final TextEditingController controller;
   @override
   State<PasswordField> createState() => _PasswordFieldState();
 }
@@ -19,7 +21,8 @@ class _PasswordFieldState extends State<PasswordField> {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          TextField(
+          TextFormField(
+            controller: widget.controller,
             obscureText: _obscureText,
             decoration: InputDecoration(
               hintStyle: const TextStyle(color: Colors.grey, fontSize: 15),

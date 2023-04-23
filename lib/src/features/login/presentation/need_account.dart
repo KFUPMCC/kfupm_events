@@ -42,7 +42,7 @@ class SignUpPop extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const Text(
-              'To create an account\n please send a request to: \n "kfupm-events@gmail.com" \n\n Note that we primarily accept requests from club presidents, faculty members and organizers. \n\n Thank you',
+              'To get an account,\n please send a request to: \n "kfupm-events@gmail.com" \n\n Note that we primarily accept requests from club presidents, faculty members and organizers.',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500),
             ),

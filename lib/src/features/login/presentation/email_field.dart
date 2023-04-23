@@ -1,10 +1,18 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-class EmailField extends StatelessWidget {
+class EmailField extends StatefulWidget {
   const EmailField({
-    super.key,
-  });
+    Key? key,
+    required this.controller,
+  }) : super(key: key);
+  final TextEditingController controller;
 
+  @override
+  State<EmailField> createState() => _EmailFieldState();
+}
+
+class _EmailFieldState extends State<EmailField> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -12,7 +20,8 @@ class EmailField extends StatelessWidget {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          TextField(
+          TextFormField(
+            controller: widget.controller,
             keyboardType: TextInputType
                 .emailAddress, // Optional, but may be useful to show the number keyboard
 

@@ -1,19 +1,19 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+
 import 'package:kfupm_events/src/constants/constants.dart';
-import 'package:kfupm_events/src/routing/routes.dart';
 
 class LoginButton extends StatelessWidget {
-  const LoginButton({super.key});
-
+  const LoginButton({
+    Key? key,
+    required this.login,
+  }) : super(key: key);
+  final VoidCallback login;
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     return ElevatedButton(
-      onPressed: () {
-        // Add your onPressed code here
-        context.goNamed(AppRoute.register.name);
-      },
+      onPressed: login,
       style: ElevatedButton.styleFrom(
         backgroundColor: kGreenColor,
         shape: RoundedRectangleBorder(

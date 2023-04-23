@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kfupm_events/src/features/login/application/login_auth.dart';
 import 'package:kfupm_events/src/features/login/presentation/email_field.dart';
 import 'package:kfupm_events/src/features/login/presentation/need_account.dart';
 import 'package:kfupm_events/src/features/login/presentation/login_button.dart';
@@ -6,8 +7,24 @@ import 'package:kfupm_events/src/features/login/presentation/login_logo.dart';
 import 'package:kfupm_events/src/features/login/presentation/password_field.dart';
 import '../../../constants/constants.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  // Email password authintication
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,38 +68,43 @@ class LoginPage extends StatelessWidget {
                   child: LoginLogo(),
                 ),
                 //login credintials
-                Column(
-                  children: const [
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 40.0, vertical: 30),
-                      child: Text(
-                        "Log in to your organizer account before creating an event.",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                        ),
-                        textAlign: TextAlign.center,
+                Form(
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 30,
                       ),
-                    ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 40.0, vertical: 30),
+                        child: Text(
+                          "Log in to your organizer account before creating an event.",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
 
-                    // KFUPM ID field
-                    EmailField(),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    // Password field
-                    PasswordField(),
-                    // checkbox field
-                    NeedAccount(),
-                    // Login button
-                    SizedBox(
-                      height: 10,
-                    ),
-                    LoginButton(),
-                  ],
+                      // KFUPM ID field
+                      EmailField(controller: emailController),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      // Password field
+                      PasswordField(controller: passwordController),
+                      // checkbox field
+                      const NeedAccount(),
+                      // Login button
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      LoginButton(
+                        login: () => logInAuth(
+                            emailController, passwordController, context),
+                      ),
+                    ],
+                  ),
                 )
               ],
             ),
