@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
+import 'package:kfupm_events/src/common_widgets/landing_page.dart';
+import 'package:kfupm_events/src/features/home/presentation/home_page.dart';
 import 'package:kfupm_events/src/features/login/presentation/login_page.dart';
-import 'package:kfupm_events/src/features/main/presentation/main_page.dart';
-
 import '../features/events/presentation/events_page.dart';
 import '../features/register/presentation/register_page.dart';
 import '../features/setting/presentation/setting_page.dart';
@@ -9,7 +9,8 @@ import '../features/setting/presentation/setting_page.dart';
 enum AppRoute {
   login,
   events,
-  main,
+  home,
+  landing,
   register,
   setting,
 }
@@ -20,8 +21,8 @@ final goRouter = GoRouter(
   routes: [
     GoRoute(
         path: '/',
-        name: AppRoute.main.name,
-        builder: (context, state) => const MainPage(),
+        name: AppRoute.landing.name,
+        builder: (context, state) => const LandingPage(),
         routes: [
           GoRoute(
             path: 'events',
@@ -37,6 +38,11 @@ final goRouter = GoRouter(
             path: 'register',
             name: AppRoute.register.name,
             builder: (context, state) => const RegisterPage(),
+          ),
+          GoRoute(
+            path: 'home',
+            name: AppRoute.home.name,
+            builder: (context, state) => const HomePage(),
           ),
           GoRoute(
             path: 'setting',
