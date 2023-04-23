@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
-class IdField extends StatelessWidget {
-  const IdField({
+class EmailField extends StatelessWidget {
+  const EmailField({
     super.key,
   });
 
@@ -15,13 +14,10 @@ class IdField extends StatelessWidget {
         children: [
           TextField(
             keyboardType: TextInputType
-                .number, // Optional, but may be useful to show the number keyboard
-            inputFormatters: <TextInputFormatter>[
-              FilteringTextInputFormatter.allow(
-                  RegExp(r'[0-9]')), // Only allows digits 0-9
-            ],
+                .emailAddress, // Optional, but may be useful to show the number keyboard
+
             decoration: InputDecoration(
-              hintText: 'Ex: 201953850',
+              hintText: 's20xxxxx@kfupm.edu.sa',
               focusedBorder: null,
               hintStyle: const TextStyle(color: Colors.grey, fontSize: 15),
               contentPadding:
@@ -37,7 +33,7 @@ class IdField extends StatelessWidget {
             child: Container(
               decoration: const BoxDecoration(color: Colors.white),
               child: const Text(
-                'KFUPM ID',
+                'Email',
                 style: TextStyle(fontWeight: FontWeight.w600),
               ),
             ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kfupm_events/src/features/login/presentation/id_field.dart';
+import 'package:kfupm_events/src/features/login/presentation/email_field.dart';
 import 'package:kfupm_events/src/features/login/presentation/need_account.dart';
 import 'package:kfupm_events/src/features/login/presentation/login_button.dart';
 import 'package:kfupm_events/src/features/login/presentation/login_logo.dart';
@@ -69,7 +69,7 @@ class LoginPage extends StatelessWidget {
                     ),
 
                     // KFUPM ID field
-                    IdField(),
+                    EmailField(),
                     SizedBox(
                       height: 30,
                     ),
