@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kfupm_events/src/features/home/presentation/home_lower.dart';
 import 'package:kfupm_events/src/features/home/presentation/home_upper.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,6 +17,7 @@ class _HomePageState extends State<HomePage> {
         // Green home part
         HomeUpper(),
         // Events white part
+        HomeLower(),
       ],
     );
   }

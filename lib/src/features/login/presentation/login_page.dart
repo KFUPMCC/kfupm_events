@@ -33,15 +33,6 @@ class _LoginPageState extends State<LoginPage> {
     bool keepLogin = false;
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: kGreenColor,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-      ),
       //total background
       body: Container(
         //background design
