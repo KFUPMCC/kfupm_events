@@ -12,13 +12,15 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const [
-        // Green home part
-        HomeUpper(),
-        // Events white part
-        HomeLower(),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: const [
+          // Green home part
+          HomeUpper(),
+          // Events white part
+          HomeLower(),
+        ],
+      ),
     );
   }
 }
