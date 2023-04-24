@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kfupm_events/src/features/home/presentation/filter_button.dart';
+import 'package:kfupm_events/src/features/home/presentation/upper/filter_button.dart';
 
 class FilteringButtons extends StatelessWidget {
   const FilteringButtons({super.key});

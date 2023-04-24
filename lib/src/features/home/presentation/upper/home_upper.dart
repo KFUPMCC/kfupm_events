@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kfupm_events/src/constants/constants.dart';
-import 'package:kfupm_events/src/features/home/presentation/filtering_buttons.dart';
-import 'package:kfupm_events/src/features/home/presentation/home_logo.dart';
-import 'package:kfupm_events/src/features/home/presentation/home_welcoming_text.dart';
-import 'package:kfupm_events/src/features/home/presentation/search_field.dart';
+import 'package:kfupm_events/src/features/home/presentation/upper/filtering_buttons.dart';
+import 'package:kfupm_events/src/features/home/presentation/upper/home_logo.dart';
+import 'package:kfupm_events/src/features/home/presentation/upper/home_welcoming_text.dart';
+import 'package:kfupm_events/src/features/home/presentation/upper/search_field.dart';
 
 class HomeUpper extends StatefulWidget {
   const HomeUpper({super.key});

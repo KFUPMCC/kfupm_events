@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kfupm_events/src/features/home/presentation/home_lower.dart';
-import 'package:kfupm_events/src/features/home/presentation/home_upper.dart';
+import 'package:kfupm_events/src/features/home/presentation/lower/home_lower.dart';
+import 'package:kfupm_events/src/features/home/presentation/upper/home_upper.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

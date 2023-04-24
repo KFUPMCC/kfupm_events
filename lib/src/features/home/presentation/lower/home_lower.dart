@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kfupm_events/src/constants/constants.dart';
-import 'package:kfupm_events/src/features/home/presentation/week_tab.dart';
+import 'package:kfupm_events/src/features/home/presentation/lower/week_events.dart';
+import 'package:kfupm_events/src/features/home/presentation/lower/week_tab.dart';
 
 class HomeLower extends StatefulWidget {
   const HomeLower({super.key});
@@ -67,32 +68,18 @@ class _HomeLowerState extends State<HomeLower>
           child: SingleChildScrollView(
             child: SizedBox(
               width: double.infinity,
-              height: 1000,
+              height: 769,
               child: TabBarView(
                 physics: const NeverScrollableScrollPhysics(),
                 controller: tabController,
                 children: const [
-                  WeekTab(
-                    number: 1,
-                  ),
-                  WeekTab(
-                    number: 2,
-                  ),
-                  WeekTab(
-                    number: 3,
-                  ),
-                  WeekTab(
-                    number: 4,
-                  ),
-                  WeekTab(
-                    number: 5,
-                  ),
-                  WeekTab(
-                    number: 6,
-                  ),
-                  WeekTab(
-                    number: 7,
-                  ),
+                  WeekEvents(),
+                  WeekEvents(),
+                  WeekEvents(),
+                  WeekEvents(),
+                  WeekEvents(),
+                  WeekEvents(),
+                  WeekEvents(),
                 ],
               ),
             ),
