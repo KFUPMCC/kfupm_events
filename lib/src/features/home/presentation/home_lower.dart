@@ -10,9 +10,11 @@ class HomeLower extends StatefulWidget {
 }
 
 class _HomeLowerState extends State<HomeLower>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
   late TabController tabController;
 
+  @override
+  bool get wantKeepAlive => true;
   @override
   void initState() {
     super.initState();
@@ -67,6 +69,7 @@ class _HomeLowerState extends State<HomeLower>
               width: double.infinity,
               height: 1000,
               child: TabBarView(
+                physics: const NeverScrollableScrollPhysics(),
                 controller: tabController,
                 children: const [
                   WeekTab(
