@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:kfupm_events/src/features/home/presentation/lower/event_card.dart';
+import 'package:kfupm_events/src/features/home/presentation/lower/card/event_card.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/events_row.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/header_section.dart';
 
