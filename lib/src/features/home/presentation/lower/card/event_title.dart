@@ -11,7 +11,7 @@ class EventTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      left: 50,
+      left: 58,
       top: 10,
       child: SizedBox(
         height: 30,

@@ -12,7 +12,7 @@ class EventTime extends StatelessWidget {
   Widget build(BuildContext context) {
     String formattedTime = time.format(context);
     return Positioned(
-      left: 50,
+      left: 58,
       top: 35,
       child: SizedBox(
           width: 130,

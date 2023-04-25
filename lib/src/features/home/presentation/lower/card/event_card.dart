@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kfupm_events/src/features/events/domain/etype.dart';
+import 'package:kfupm_events/src/features/home/presentation/lower/card/event_date.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/event_loaction.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/event_time.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/event_title.dart';
@@ -34,12 +35,13 @@ class _EventCardState extends State<EventCard> {
               height: 70,
               child: Stack(
                 clipBehavior: Clip.none,
-                children: const [
-                  HostLogo(logoURL: 'assets/host_logo.jpg'),
-                  EventTitle(title: 'The Power of LinkedIn'),
-                  EventType(type: EType.workShop),
-                  EventLocation(location: 'Building 70'),
-                  EventTime(time: TimeOfDay(hour: 19, minute: 0)),
+                children: [
+                  const HostLogo(logoURL: 'assets/host_logo.jpg'),
+                  const EventTitle(title: 'The Power of LinkedIn'),
+                  const EventType(type: EType.workShop),
+                  const EventLocation(location: 'Building 70'),
+                  const EventTime(time: TimeOfDay(hour: 19, minute: 0)),
+                  EventDate(date: DateTime(2023, 2, 13)),
                 ],
               ),
             ),
