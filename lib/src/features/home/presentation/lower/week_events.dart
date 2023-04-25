@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/event_card.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/events_row.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/header_section.dart';
+import 'package:kfupm_events/src/routing/routes.dart';
 
 class WeekEvents extends StatefulWidget {
   const WeekEvents({
@@ -18,38 +19,38 @@ class _WeekEventsState extends State<WeekEvents> {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
-        HeaderSection(
+      children: [
+        const HeaderSection(
           text: 'Recommended events',
         ),
         EventsRow(
           eventsList: [
-            EventCard(),
-            EventCard(),
-            EventCard(),
-            EventCard(),
+            EventCard(eventPage: AppRoute.event.name),
+            EventCard(eventPage: AppRoute.event.name),
+            EventCard(eventPage: AppRoute.event.name),
+            EventCard(eventPage: AppRoute.event.name),
           ],
         ),
-        HeaderSection(
+        const HeaderSection(
           text: 'Recently added events',
         ),
         EventsRow(
           eventsList: [
-            EventCard(),
-            EventCard(),
-            EventCard(),
-            EventCard(),
+            EventCard(eventPage: AppRoute.event.name),
+            EventCard(eventPage: AppRoute.event.name),
+            EventCard(eventPage: AppRoute.event.name),
+            EventCard(eventPage: AppRoute.event.name),
           ],
         ),
-        HeaderSection(
+        const HeaderSection(
           text: 'Most Viewed events',
         ),
         EventsRow(
           eventsList: [
-            EventCard(),
-            EventCard(),
-            EventCard(),
-            EventCard(),
+            EventCard(eventPage: AppRoute.event.name),
+            EventCard(eventPage: AppRoute.event.name),
+            EventCard(eventPage: AppRoute.event.name),
+            EventCard(eventPage: AppRoute.event.name),
           ],
         ),
       ],

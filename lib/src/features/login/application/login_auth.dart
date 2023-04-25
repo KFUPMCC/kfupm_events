@@ -11,7 +11,7 @@ Future<void> logInAuth(TextEditingController email,
     final UserCredential userCredential = await FirebaseAuth.instance
         .signInWithEmailAndPassword(
             email: email.text.trim(), password: password.text.trim());
-    context.goNamed(AppRoute.events.name);
+    context.goNamed(AppRoute.create.name);
     // Login successful, navigate to next page or perform additional actions
   } on FirebaseAuthException catch (e) {
     if (e.code == 'user-not-found') {
