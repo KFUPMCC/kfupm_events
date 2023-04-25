@@ -10,13 +10,17 @@ class HostLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 50,
-      height: 60,
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(14)),
-        image: DecorationImage(
-          image: AssetImage(logoURL),
+    return Positioned(
+      bottom: 50,
+      left: 210,
+      child: Container(
+        width: 50,
+        height: 60,
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(14)),
+          image: DecorationImage(
+            image: AssetImage(logoURL),
+          ),
         ),
       ),
     );

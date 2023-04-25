@@ -1,4 +1,4 @@
-enum EventType {
+enum EType {
   shortCourse,
   workShop,
   sport,

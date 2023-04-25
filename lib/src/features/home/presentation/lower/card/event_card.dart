@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:kfupm_events/src/features/events/domain/etype.dart';
+import 'package:kfupm_events/src/features/home/presentation/lower/card/event_title.dart';
+import 'package:kfupm_events/src/features/home/presentation/lower/card/event_type.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/head_image.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/host_logo.dart';
 
@@ -30,11 +33,9 @@ class _EventCardState extends State<EventCard> {
               child: Stack(
                 clipBehavior: Clip.none,
                 children: const [
-                  Positioned(
-                    bottom: 50,
-                    left: 210,
-                    child: HostLogo(logoURL: 'assets/host_logo.jpg'),
-                  ),
+                  HostLogo(logoURL: 'assets/host_logo.jpg'),
+                  EventTitle(title: 'The Power of LinkedIn'),
+                  EventType(type: EType.workShop),
                 ],
               ),
             ),
