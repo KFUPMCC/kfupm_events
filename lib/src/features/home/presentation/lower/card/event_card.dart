@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kfupm_events/src/features/events/domain/etype.dart';
+import 'package:kfupm_events/src/features/home/presentation/lower/card/event_loaction.dart';
+import 'package:kfupm_events/src/features/home/presentation/lower/card/event_time.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/event_title.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/event_type.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/head_image.dart';
@@ -36,6 +38,8 @@ class _EventCardState extends State<EventCard> {
                   HostLogo(logoURL: 'assets/host_logo.jpg'),
                   EventTitle(title: 'The Power of LinkedIn'),
                   EventType(type: EType.workShop),
+                  EventLocation(location: 'Building 70'),
+                  EventTime(time: TimeOfDay(hour: 19, minute: 0)),
                 ],
               ),
             ),
