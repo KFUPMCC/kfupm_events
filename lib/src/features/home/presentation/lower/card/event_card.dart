@@ -24,7 +24,8 @@ class _EventCardState extends State<EventCard> {
         width: 270,
         height: 180,
         decoration: BoxDecoration(
-          color: Colors.grey[200],
+          color: Colors.grey[100],
+          //border: Border.all(width: 0.2),
           borderRadius: BorderRadius.circular(30),
         ),
         child: Column(
