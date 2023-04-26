@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kfupm_events/src/features/events/presentation/lower_event.dart';
 import 'package:kfupm_events/src/features/events/presentation/upper_event.dart';
 
 class EventPage extends StatelessWidget {
@@ -9,10 +10,11 @@ class EventPage extends StatelessWidget {
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      body: Column(
+      body: Stack(
         children: [
           // header part of event page
           UpperEvent(screenHeight: screenHeight),
+          LowerEvent(screenHeight: screenHeight)
         ],
       ),
     );

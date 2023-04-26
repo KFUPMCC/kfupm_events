@@ -17,6 +17,8 @@ class UpperEvent extends StatelessWidget {
       width: double.infinity,
       height: screenHeight * 0.3,
       decoration: const BoxDecoration(
+        // borderRadius: BorderRadius.only(
+        //     bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20)),
         image: DecorationImage(
           image: AssetImage('assets/card.png'),
           fit: BoxFit.fill,
