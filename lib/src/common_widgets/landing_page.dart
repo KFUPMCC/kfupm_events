@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kfupm_events/src/constants/constants.dart';
+import 'package:kfupm_events/src/features/events/presentation/myevents/myevents_page.dart';
 import 'package:kfupm_events/src/features/home/presentation/home_page.dart';
 import 'package:kfupm_events/src/features/login/presentation/login_page.dart';
 import 'package:kfupm_events/src/features/setting/presentation/setting_page.dart';
@@ -16,6 +17,7 @@ class _LandingPageState extends State<LandingPage> {
   final List<Widget> body = [
     const HomePage(),
     const LoginPage(),
+    const MyEvents(),
     const SettingPage(),
   ];
   @override
@@ -24,6 +26,7 @@ class _LandingPageState extends State<LandingPage> {
       body: body[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: kGreenColor,
+        unselectedItemColor: Colors.grey,
         currentIndex: currentIndex,
         onTap: (int newIndex) {
           setState(() {
@@ -40,6 +43,10 @@ class _LandingPageState extends State<LandingPage> {
           BottomNavigationBarItem(
             label: 'Create Event',
             icon: Icon(Icons.add),
+          ),
+          BottomNavigationBarItem(
+            label: 'My Events',
+            icon: Icon(Icons.bookmark),
           ),
           BottomNavigationBarItem(
             label: 'Setting',

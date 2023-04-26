@@ -1,17 +1,21 @@
 import 'package:go_router/go_router.dart';
 import 'package:kfupm_events/src/common_widgets/landing_page.dart';
 import 'package:kfupm_events/src/features/create/presentation/create_page.dart';
+import 'package:kfupm_events/src/features/events/presentation/myevents/myevents_page.dart';
 import 'package:kfupm_events/src/features/home/presentation/home_page.dart';
 import 'package:kfupm_events/src/features/login/presentation/login_page.dart';
+import 'package:kfupm_events/src/features/home/presentation/welcome_page.dart';
 import '../features/events/presentation/event_page.dart';
 import '../features/register/presentation/register_page.dart';
 import '../features/setting/presentation/setting_page.dart';
 
 enum AppRoute {
+  welcome,
   login,
   event,
   home,
   landing,
+  myevents,
   register,
   create,
   setting,
@@ -23,9 +27,14 @@ final goRouter = GoRouter(
   routes: [
     GoRoute(
         path: '/',
-        name: AppRoute.landing.name,
-        builder: (context, state) => const LandingPage(),
+        name: AppRoute.welcome.name,
+        builder: (context, state) => const WelcomePage(),
         routes: [
+          GoRoute(
+            path: 'landing',
+            name: AppRoute.landing.name,
+            builder: (context, state) => const LandingPage(),
+          ),
           GoRoute(
             path: 'event',
             name: AppRoute.event.name,
@@ -35,6 +44,11 @@ final goRouter = GoRouter(
             path: 'create',
             name: AppRoute.create.name,
             builder: (context, state) => const CreatePage(),
+          ),
+          GoRoute(
+            path: 'myevents',
+            name: AppRoute.myevents.name,
+            builder: (context, state) => const MyEvents(),
           ),
           GoRoute(
             path: 'login',
