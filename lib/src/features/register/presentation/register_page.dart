@@ -1,14 +1,41 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:kfupm_events/src/features/register/presentation/registerForm/register_form.dart';
+
+import 'package:kfupm_events/src/features/register/presentation/register_bar.dart';
 
 class RegisterPage extends StatelessWidget {
-  const RegisterPage({super.key});
+  const RegisterPage({
+    Key? key,
+    required this.title,
+    required this.location,
+    required this.time,
+    required this.date,
+  }) : super(key: key);
+  final String title;
+  final String location;
+  final String time;
+  final String date;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: const Center(
-        child: Text('Register page'),
-      ),
-    );
+    final screenHeight = MediaQuery.of(context).size.height;
+    return Scaffold(
+        body: Stack(
+      children: [
+        RegisterBar(
+          date: date,
+          location: location,
+          time: time,
+          title: title,
+        ),
+        RegisterForm(
+          screenHeight: screenHeight,
+        ),
+        
+        // AgreeCondition(),
+        // RegisterButton(),
+      ],
+    ));
   }
 }

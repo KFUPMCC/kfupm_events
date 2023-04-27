@@ -4,7 +4,7 @@ import 'package:kfupm_events/src/features/events/presentation/eventInfo/event_in
 import 'package:kfupm_events/src/features/events/presentation/event_head.dart';
 import 'package:kfupm_events/src/features/events/presentation/event_reg_bar.dart';
 import 'package:kfupm_events/src/routing/routes.dart';
-
+import 'package:intl/intl.dart';
 class LowerEvent extends StatelessWidget {
   const LowerEvent({
     super.key,
@@ -35,7 +35,6 @@ class LowerEvent extends StatelessWidget {
                   host: 'نادي الحاسب الآلي',
                   title: 'The Power of LinkedIn',
                   logoURL: 'assets/host_logo.jpg',
-                  
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 70),
@@ -71,7 +70,17 @@ class LowerEvent extends StatelessWidget {
             child: EventReg(
               seatNumber: 450,
               goRegPage: () {
-                context.pushNamed(AppRoute.register.name);
+                context.pushNamed(
+                  AppRoute.register.name,
+                  params: {
+                    'title': 'The Power of LinkedIn',
+                    'date': DateFormat('dd MMM yyyy').format(DateTime(2023, 2, 13)),
+                    'time': const TimeOfDay(hour: 19, minute: 30).format(context),
+                    'location': 'Building 70',
+                  },
+                  
+                  
+                );
               },
             ),
           ),

@@ -56,9 +56,20 @@ final goRouter = GoRouter(
             builder: (context, state) => const LoginPage(),
           ),
           GoRoute(
-            path: 'register',
+            path: 'register/:title/:date/:time/:location',
             name: AppRoute.register.name,
-            builder: (context, state) => const RegisterPage(),
+            builder: (context, state) {
+              final title = state.params['title']!;
+              final date = state.params['date']!;
+              final time = state.params['time']!;
+              final location = state.params['location']!;
+              return RegisterPage(
+                date: date,
+                time: time,
+                location: location,
+                title: title,
+              );
+            },
           ),
           GoRoute(
             path: 'home',
