@@ -5,6 +5,7 @@ import 'package:kfupm_events/src/features/events/presentation/myevents/myevents_
 import 'package:kfupm_events/src/features/home/presentation/home_page.dart';
 import 'package:kfupm_events/src/features/login/presentation/login_page.dart';
 import 'package:kfupm_events/src/features/home/presentation/welcome_page.dart';
+import 'package:kfupm_events/src/features/register/presentation/complete_page.dart';
 import '../features/events/presentation/event_page.dart';
 import '../features/register/presentation/register_page.dart';
 import '../features/setting/presentation/setting_page.dart';
@@ -16,6 +17,7 @@ enum AppRoute {
   home,
   landing,
   myevents,
+  complete,
   register,
   create,
   setting,
@@ -31,9 +33,14 @@ final goRouter = GoRouter(
         builder: (context, state) => const WelcomePage(),
         routes: [
           GoRoute(
-            path: 'landing',
+            path: 'landing/:currentIndex',
             name: AppRoute.landing.name,
-            builder: (context, state) => const LandingPage(),
+            builder: (context, state) {
+              final currentIndex = state.params['currentIndex']!;
+              return LandingPage(
+                currentIndex: int.parse(currentIndex),
+              );
+            },
           ),
           GoRoute(
             path: 'event',
@@ -75,6 +82,11 @@ final goRouter = GoRouter(
             path: 'home',
             name: AppRoute.home.name,
             builder: (context, state) => const HomePage(),
+          ),
+          GoRoute(
+            path: 'complete',
+            name: AppRoute.complete.name,
+            builder: (context, state) => const CompletePage(),
           ),
           GoRoute(
             path: 'setting',

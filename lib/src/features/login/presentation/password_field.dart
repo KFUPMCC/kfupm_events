@@ -6,7 +6,7 @@ class PasswordField extends StatefulWidget {
     Key? key,
     required this.controller,
   }) : super(key: key);
-final TextEditingController controller;
+  final TextEditingController controller;
   @override
   State<PasswordField> createState() => _PasswordFieldState();
 }
@@ -52,9 +52,18 @@ class _PasswordFieldState extends State<PasswordField> {
             bottom: 39,
             child: Container(
               decoration: const BoxDecoration(color: Colors.white),
-              child: const Text(
-                'Password',
-                style: TextStyle(fontWeight: FontWeight.w600),
+              child: Row(
+                children: const [
+                  Text(
+                    'Password',
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  Text(
+                    '*',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600, color: Colors.red),
+                  ),
+                ],
               ),
             ),
           ),

@@ -35,7 +35,10 @@ class WelcomePage extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                context.goNamed(AppRoute.landing.name);
+                context.goNamed(
+                  AppRoute.landing.name,
+                  params: {'currentIndex': '0'},
+                );
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -60,7 +63,10 @@ class WelcomePage extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                context.goNamed(AppRoute.landing.name);
+                context.goNamed(
+                  AppRoute.landing.name,
+                  params: {'currentIndex': '0'},
+                );
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,

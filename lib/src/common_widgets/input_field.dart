@@ -1,18 +1,24 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-class EmailField extends StatefulWidget {
-  const EmailField({
+class InputField extends StatefulWidget {
+  const InputField({
     Key? key,
     required this.controller,
+    required this.inputName,
+    required this.inputHint,
+    required this.type,
   }) : super(key: key);
-  final TextEditingController controller;
+  final TextEditingController? controller;
+  final String inputName;
+  final String inputHint;
+  final TextInputType type;
 
   @override
-  State<EmailField> createState() => _EmailFieldState();
+  State<InputField> createState() => _InputFieldState();
 }
 
-class _EmailFieldState extends State<EmailField> {
+class _InputFieldState extends State<InputField> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,11 +28,11 @@ class _EmailFieldState extends State<EmailField> {
         children: [
           TextFormField(
             controller: widget.controller,
-            keyboardType: TextInputType
-                .emailAddress, // Optional, but may be useful to show the number keyboard
+            keyboardType: widget
+                .type, // Optional, but may be useful to show the number keyboard
 
             decoration: InputDecoration(
-              hintText: 's20xxxxx@kfupm.edu.sa',
+              hintText: widget.inputHint,
               focusedBorder: null,
               hintStyle: const TextStyle(color: Colors.grey, fontSize: 15),
               contentPadding:
@@ -41,9 +47,18 @@ class _EmailFieldState extends State<EmailField> {
             bottom: 39,
             child: Container(
               decoration: const BoxDecoration(color: Colors.white),
-              child: const Text(
-                'Email',
-                style: TextStyle(fontWeight: FontWeight.w600),
+              child: Row(
+                children: [
+                  Text(
+                    widget.inputName,
+                    style: const TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  const Text(
+                    '*',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600, color: Colors.red),
+                  ),
+                ],
               ),
             ),
           ),

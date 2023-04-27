@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kfupm_events/src/features/login/application/login_auth.dart';
-import 'package:kfupm_events/src/features/login/presentation/email_field.dart';
+import 'package:kfupm_events/src/common_widgets/input_field.dart';
 import 'package:kfupm_events/src/features/login/presentation/need_account.dart';
 import 'package:kfupm_events/src/features/login/presentation/login_button.dart';
 import 'package:kfupm_events/src/features/login/presentation/login_logo.dart';
@@ -78,7 +78,12 @@ class _LoginPageState extends State<LoginPage> {
                       ),
 
                       // KFUPM ID field
-                      EmailField(controller: emailController),
+                      InputField(
+                        controller: emailController,
+                        inputHint: 's20xxxxxx@kfupm.edu.sa',
+                        inputName: 'Email',
+                        type: TextInputType.emailAddress,
+                      ),
                       const SizedBox(
                         height: 30,
                       ),

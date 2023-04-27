@@ -1,4 +1,6 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
 import 'package:kfupm_events/src/constants/constants.dart';
 import 'package:kfupm_events/src/features/events/presentation/myevents/myevents_page.dart';
 import 'package:kfupm_events/src/features/home/presentation/home_page.dart';
@@ -6,14 +8,17 @@ import 'package:kfupm_events/src/features/login/presentation/login_page.dart';
 import 'package:kfupm_events/src/features/setting/presentation/setting_page.dart';
 
 class LandingPage extends StatefulWidget {
-  const LandingPage({super.key});
+  LandingPage({
+    Key? key,
+    required this.currentIndex,
+  }) : super(key: key);
+  int currentIndex;
 
   @override
   State<LandingPage> createState() => _LandingPageState();
 }
 
 class _LandingPageState extends State<LandingPage> {
-  int currentIndex = 0;
   final List<Widget> body = [
     const HomePage(),
     const LoginPage(),
@@ -23,14 +28,14 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: body[currentIndex],
+      body: body[widget.currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: kGreenColor,
         unselectedItemColor: Colors.grey,
-        currentIndex: currentIndex,
+        currentIndex: widget.currentIndex,
         onTap: (int newIndex) {
           setState(() {
-            currentIndex = newIndex;
+            widget.currentIndex = newIndex;
           });
         },
         items: const [
