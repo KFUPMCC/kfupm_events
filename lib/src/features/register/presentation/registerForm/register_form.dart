@@ -79,7 +79,7 @@ class RegisterForm extends StatelessWidget {
                   title: 'Register Now',
                   widthScale: 0.34,
                   navigatePage: () {
-                    context.goNamed(AppRoute.complete.name);
+                    context.goNamed(AppRoute.registerComplete.name);
                   },
                 ),
               ],

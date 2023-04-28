@@ -1,11 +1,12 @@
 import 'package:go_router/go_router.dart';
 import 'package:kfupm_events/src/common_widgets/landing_page.dart';
+import 'package:kfupm_events/src/features/create/presentation/create_complete_page.dart';
 import 'package:kfupm_events/src/features/create/presentation/create_page.dart';
 import 'package:kfupm_events/src/features/events/presentation/myevents/myevents_page.dart';
 import 'package:kfupm_events/src/features/home/presentation/home_page.dart';
 import 'package:kfupm_events/src/features/login/presentation/login_page.dart';
 import 'package:kfupm_events/src/features/home/presentation/welcome_page.dart';
-import 'package:kfupm_events/src/features/register/presentation/complete_page.dart';
+import 'package:kfupm_events/src/features/register/presentation/register_complete_page.dart';
 import '../features/events/presentation/event_page.dart';
 import '../features/register/presentation/register_page.dart';
 import '../features/setting/presentation/setting_page.dart';
@@ -17,7 +18,8 @@ enum AppRoute {
   home,
   landing,
   myevents,
-  complete,
+  registerComplete,
+  createComplete,
   register,
   create,
   setting,
@@ -84,9 +86,14 @@ final goRouter = GoRouter(
             builder: (context, state) => const HomePage(),
           ),
           GoRoute(
-            path: 'complete',
-            name: AppRoute.complete.name,
-            builder: (context, state) => const CompletePage(),
+            path: 'createComplete',
+            name: AppRoute.createComplete.name,
+            builder: (context, state) => const CreateCompletePage(),
+          ),
+          GoRoute(
+            path: 'registerComplete',
+            name: AppRoute.registerComplete.name,
+            builder: (context, state) => const RegisterCompletePage(),
           ),
           GoRoute(
             path: 'setting',

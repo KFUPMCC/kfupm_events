@@ -39,3 +39,13 @@ const List<String> kfupm_majors = [
   'Faculty Member',
   'Others',
 ];
+
+const List<String> eventTypes = [
+  'Select Type',
+  'Short Course',
+  'Workshop',
+  'Sport',
+  'Festival',
+  'Exam',
+  'Other',
+];

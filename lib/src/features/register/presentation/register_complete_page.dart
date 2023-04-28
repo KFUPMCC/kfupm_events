@@ -4,8 +4,8 @@ import 'package:kfupm_events/src/common_widgets/navigate_button.dart';
 import 'package:kfupm_events/src/constants/constants.dart';
 import 'package:kfupm_events/src/routing/routes.dart';
 
-class CompletePage extends StatelessWidget {
-  const CompletePage({super.key});
+class RegisterCompletePage extends StatelessWidget {
+  const RegisterCompletePage({super.key});
 
   @override
   Widget build(BuildContext context) {
