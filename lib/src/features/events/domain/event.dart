@@ -5,27 +5,29 @@ import 'package:kfupm_events/src/features/events/domain/etype.dart';
 
 class Event {
   const Event({
+    required this.id,
     required this.title,
-    required this.headImage,
-    required this.type,
-    required this.weekNumber,
-    required this.date,
-    required this.time,
-    required this.location,
-    required this.hostLogo,
-    required this.hostName,
+    required this.image,
     required this.agenda,
-    required this.description,
+    required this.type,
+    required this.host,
+    required this.hostLogo,
+    required this.building,
+    required this.buildingURL,
+    required this.seats,
+    required this.time,
+    required this.date,
   });
+  final int id;
   final String title;
-  final String headImage;
-  final EType type;
-  final int weekNumber;
-  final DateTime date;
-  final TimeOfDay time;
-  final String location;
-  final String hostLogo;
-  final String hostName;
+  final String image;
   final String agenda;
-  final String description;
+  final EType type;
+  final String host;
+  final String hostLogo;
+  final String building;
+  final String buildingURL;
+  final int seats;
+  final TimeOfDay time;
+  final DateTime date;
 }

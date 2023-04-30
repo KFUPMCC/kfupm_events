@@ -5,6 +5,7 @@ import 'package:kfupm_events/src/features/events/presentation/event_head.dart';
 import 'package:kfupm_events/src/features/events/presentation/event_reg_bar.dart';
 import 'package:kfupm_events/src/routing/routes.dart';
 import 'package:intl/intl.dart';
+
 class LowerEvent extends StatelessWidget {
   const LowerEvent({
     super.key,
@@ -39,26 +40,15 @@ class LowerEvent extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 70),
                   child: EventInfo(
-                    date: DateTime(2023, 2, 13),
-                    time: const TimeOfDay(hour: 19, minute: 30),
-                    location: 'Building 70',
-                    locationURL: 'https://goo.gl/maps/BCNAGcnpVSEdXVZLA',
-                    agenda: '- Building the perfect Profile page\n'
-                        '- What to share and what to not? Best way to share it\n'
-                        '- Linking what you want with what companies search for\n'
-                        '- How to expand your connections?\n'
-                        '- How to benefit from your connections? How to respond to offers?\n'
-                        '- Building the perfect Profile page\n'
-                        '- What to share and what to not? Best way to share it\n'
-                        '- Linking what you want with what companies search for\n'
-                        '- How to expand your connections?\n'
-                        '- How to benefit from your connections? How to respond to offers?\n'
-                        '- Building the perfect Profile page\n'
-                        '- What to share and what to not? Best way to share it\n'
-                        '- Linking what you want with what companies search for\n'
-                        '- How to expand your connections?\n'
-                        '- How to benefit from your connections? How to respond to offers?\n',
-                  ),
+                      date: DateTime(2023, 2, 13),
+                      time: const TimeOfDay(hour: 19, minute: 30),
+                      location: 'Building 70',
+                      locationURL: 'https://goo.gl/maps/BCNAGcnpVSEdXVZLA',
+                      agenda: '- Building the perfect Profile page\n'
+                          '- What to share and what to not? Best way to share it\n'
+                          '- Linking what you want with what companies search for\n'
+                          '- How to expand your connections?\n'
+                          '- How to benefit from your connections? How to respond to offers?\n'),
                 ),
               ],
             ),
@@ -74,12 +64,12 @@ class LowerEvent extends StatelessWidget {
                   AppRoute.register.name,
                   params: {
                     'title': 'The Power of LinkedIn',
-                    'date': DateFormat('dd MMM yyyy').format(DateTime(2023, 2, 13)),
-                    'time': const TimeOfDay(hour: 19, minute: 30).format(context),
+                    'date':
+                        DateFormat('dd MMM yyyy').format(DateTime(2023, 2, 13)),
+                    'time':
+                        const TimeOfDay(hour: 19, minute: 30).format(context),
                     'location': 'Building 70',
                   },
-                  
-                  
                 );
               },
             ),
