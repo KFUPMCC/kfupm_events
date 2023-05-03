@@ -35,11 +35,14 @@ class EventHead extends StatelessWidget {
               const SizedBox(
                 height: 5,
               ),
-              Text(
-                'Hosted by: $host',
-                textAlign: TextAlign.left,
-                style: const TextStyle(
-                    fontWeight: FontWeight.bold, color: Colors.grey),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.6,
+                child: Text(
+                  'Hosted by: $host',
+                  textAlign: TextAlign.left,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.grey),
+                ),
               ),
             ],
           ),

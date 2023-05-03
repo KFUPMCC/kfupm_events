@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:kfupm_events/src/features/events/domain/etype.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/event_date.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/event_loaction.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/event_time.dart';
@@ -10,25 +9,29 @@ import 'package:kfupm_events/src/features/home/presentation/lower/card/event_tit
 import 'package:kfupm_events/src/features/home/presentation/lower/card/event_type.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/head_image.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/host_logo.dart';
-import 'package:kfupm_events/src/routing/routes.dart';
 
-class EventCard extends StatefulWidget {
+import '../../../../../routing/routes.dart';
+import '../../../../events/domain/event.dart';
+
+class EventCard extends StatelessWidget {
   const EventCard({
     Key? key,
-    required this.eventPage,
+    required this.eventIndex,
+    required this.event,
   }) : super(key: key);
-  final String eventPage;
+  final int eventIndex;
+  final Event event;
 
-  @override
-  State<EventCard> createState() => _EventCardState();
-}
-
-class _EventCardState extends State<EventCard> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.pushNamed(widget.eventPage);
+        context.pushNamed(
+          AppRoute.event.name,
+          params: {
+            'eventIndex': eventIndex.toString(),
+          },
+        );
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -42,19 +45,19 @@ class _EventCardState extends State<EventCard> {
           ),
           child: Column(
             children: [
-              const HeadImage(imageURL: 'assets/card.png'),
+              HeadImage(imageURL: event.image),
               SizedBox(
                 width: double.infinity,
                 height: 70,
                 child: Stack(
                   clipBehavior: Clip.none,
                   children: [
-                    const HostLogo(logoURL: 'assets/host_logo.jpg'),
-                    const EventTitle(title: 'The Power of LinkedIn'),
-                    const EventType(type: EType.workShop),
-                    const EventLocation(location: 'Building 70'),
-                    const EventTime(time: TimeOfDay(hour: 19, minute: 0)),
-                    EventDate(date: DateTime(2023, 2, 13)),
+                    HostLogo(logoURL: event.hostLogo),
+                    EventTitle(title: event.title),
+                    EventType(type: event.type),
+                    EventLocation(location: event.building),
+                    EventTime(time: event.time),
+                    EventDate(date: event.date),
                   ],
                 ),
               ),

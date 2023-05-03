@@ -25,7 +25,7 @@ class EventsDataNotifier extends ChangeNotifier {
     Event(
       id: 2,
       title: 'Automating Using Python',
-      image: 'automating_header.png',
+      image: 'assets/automating_header.png',
       agenda: 'KFUPM students and several Professors, Graduates and Staff get'
           ' theopportunity to carry out their social responsibility through '
           ' participating invariety of field Programs that aim to help patients, elder '
@@ -93,6 +93,4 @@ class EventsDataNotifier extends ChangeNotifier {
       date: DateTime(2023, 2, 9),
     ),
   ];
-  
-
 }
