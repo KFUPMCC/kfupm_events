@@ -3,8 +3,9 @@ import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kfupm_events/src/features/events/data/events_data.dart';
 import 'package:kfupm_events/src/routing/routes.dart';
+import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -24,7 +25,7 @@ void main() async {
     }
   });
 
-  runApp(const ProviderScope(child: MyApp()));
+  runApp(const MyApp());
 }
 
 bool isDark = true;
@@ -35,10 +36,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: goRouter,
-      title: 'KFUPM Events',
-      debugShowCheckedModeBanner: false,
+    return ChangeNotifierProvider(
+      create: (BuildContext context) {
+        return EventsDataNotifier();
+      },
+      child: MaterialApp.router(
+        routerConfig: goRouter,
+        title: 'KFUPM Events',
+        debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }
