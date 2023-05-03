@@ -14,7 +14,7 @@ class EventsDataNotifier extends ChangeNotifier {
           '- How to expand your connections?\n'
           '- How to benefit from your connections? How to respond to offers?\n',
       type: EType.workShop,
-      host: 'نادي الحاسب الآلي',
+      host: 'Computer Club',
       hostLogo: 'assets/host_logo.jpg',
       building: 'Building 70',
       buildingURL: 'https://goo.gl/maps/BCNAGcnpVSEdXVZLA',
@@ -26,34 +26,34 @@ class EventsDataNotifier extends ChangeNotifier {
       id: 2,
       title: 'Automating Using Python',
       image: 'assets/automating_header.png',
-      agenda: 'KFUPM students and several Professors, Graduates and Staff get'
-          ' theopportunity to carry out their social responsibility through '
-          ' participating invariety of field Programs that aim to help patients, elder '
-          ' people, children,poor neighborhoods as well as participating in cleaning '
-          ' some parts of HalfMoon beach, public utilities and others.Students will '
-          ' be divided into 16 groups to execute 8 voluntary programschosen by '
+      agenda: 'KFUPM students and several Professors, Graduates and Staff get\n'
+          ' theopportunity to carry out their social responsibility through\n '
+          ' participating invariety of field Programs that aim to help patients, elder\n'
+          ' people, children,poor neighborhoods as well as participating in cleaning \n'
+          ' some parts of HalfMoon beach, public utilities and others.Students will \n'
+          ' be divided into 16 groups to execute 8 voluntary programschosen by \n'
           ' them.\n'
-          'You are required to attend all 4 days and submit '
-          'the final assignment in-order to be awarded a completion '
-          'certificate You need to bring your own laptop.'
-          ' Dinner will be served during all days of the short course'
-          '• Day 1'
-          '⁃ Review of Python'
-          '⁃ The importance of Automation'
-          ' ⁃ Introduction to PyAuroGUI Module'
-          '⁃ Introduction to Pywinauto Module'
-          '• Day 2'
-          '⁃ Introduction to Selenium Module'
-          '⁃ Introduction to Requests Module'
-          '⁃ Introduction to Selenium Module'
-          '⁃ Introduction to BeautifulSoup Module'
-          '• Day 3'
-          '⁃ Building Auto Course Register tool'
-          '⁃ Using Robot Framework'
-          '⁃ Using Pytest Framework'
-          '• Day 4'
-          '⁃ Continue building the Registration tool'
-          '⁃ Presentations⁃ Final Assignment',
+          'You are required to attend all 4 days and submit \n'
+          'the final assignment in-order to be awarded a completion \n'
+          'certificate You need to bring your own laptop.\n'
+          ' Dinner will be served during all days of the short course\n'
+          '• Day 1\n'
+          '⁃ Review of Python\n'
+          '⁃ The importance of Automation\n'
+          ' ⁃ Introduction to PyAuroGUI Module\n'
+          '⁃ Introduction to Pywinauto Module\n'
+          '• Day 2\n'
+          '⁃ Introduction to Selenium Module\n'
+          '⁃ Introduction to Requests Module\n'
+          '⁃ Introduction to Selenium Module\n'
+          '⁃ Introduction to BeautifulSoup Module\n'
+          '• Day 3\n'
+          '⁃ Building Auto Course Register tool\n'
+          '⁃ Using Robot Framework\n'
+          '⁃ Using Pytest Framework\n'
+          '• Day 4\n'
+          '⁃ Continue building the Registration tool\n'
+          '⁃ Presentations⁃ Final Assignment\n',
       type: EType.shortCourse,
       host: 'Computer club & Dr. Khalid Al- Jasser',
       hostLogo: 'assets/host_logo.jpg',
@@ -67,22 +67,22 @@ class EventsDataNotifier extends ChangeNotifier {
       id: 3,
       title: 'Volunteer Day',
       image: 'assets/volunteer_header.png',
-      agenda: 'KFUPM students and several Professors,'
-          'Graduates and Staff get theopportunity to carry out their '
-          'social responsibility through participating invariety of field'
-          ' Programs that aim to help patients, elder people, children,poor neighborhoods'
-          'as well as participating in cleaning some parts of '
-          'HalfMoon beach, public utilities and others'
-          '.Students will be divided into 16 groups to execute 8 '
+      agenda: 'KFUPM students and several Professors,\n'
+          'Graduates and Staff get theopportunity to carry out their \n'
+          'social responsibility through participating invariety of field\n'
+          ' Programs that aim to help patients, elder people, children,poor neighborhoods\n'
+          'as well as participating in cleaning some parts of \n'
+          'HalfMoon beach, public utilities and others\n'
+          '.Students will be divided into 16 groups to execute 8 \n'
           'voluntary programs chosen by them.\n'
-          'Programs: '
-          '-Childrens programs'
-          '-Elderly programs'
-          '-Programs for poor families'
-          '-Hospital visits and role of people with special needs'
-          '-Maintenance of public facilities and focus to the environment'
-          '-Visit correctional centers'
-          '-The "Thanks" program- Traffic safety program',
+          'Programs: \n'
+          '-Childrens programs\n'
+          '-Elderly programs\n'
+          '-Programs for poor families\n'
+          '-Hospital visits and role of people with special needs\n'
+          '-Maintenance of public facilities and focus to the environment\n'
+          '-Visit correctional centers\n'
+          '-The "Thanks" program- Traffic safety program\n',
       type: EType.festival,
       host: 'Volunteer unit',
       hostLogo: 'assets/volunteer_logo.png',

@@ -47,13 +47,18 @@ class AgendaInfo extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 20.0),
-            child: Text(
-              agenda,
-              style: const TextStyle(
-                fontWeight: FontWeight.w500,
-                color: Colors.black,
-                fontSize: 14,
-              ),
+            child: Wrap(
+              children: [
+                Text(
+                  agenda,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black,
+                    fontSize: 14,
+                    height: 1.2,
+                  ),
+                ),
+              ],
             ),
           ),
         ],
