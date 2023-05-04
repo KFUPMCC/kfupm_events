@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
+import 'package:provider/provider.dart';
 
-class DarkMode extends StatefulWidget {
+class DarkMode extends StatelessWidget {
   const DarkMode({super.key});
 
   @override
-  State<DarkMode> createState() => _DarkModeState();
-}
-
-class _DarkModeState extends State<DarkMode> {
-  bool isDarkMode = false;
-
-  @override
   Widget build(BuildContext context) {
+    bool hello = false;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -28,23 +24,16 @@ class _DarkModeState extends State<DarkMode> {
         ),
         Transform.scale(
           scale: 1.5,
-          child: Switch(
-            inactiveThumbImage: const AssetImage('assets/toggle_off.jpg'),
-            activeThumbImage: const AssetImage('assets/toggle_on.jpg'),
-            activeColor: Colors.blue[900],
-            inactiveTrackColor: Colors.blue[100],
-            
-            value: isDarkMode,
-            onChanged: (value) {
-              setState(
-                () {
-                  isDarkMode = value;
-
-                  if (isDarkMode) {
-                    // Set your app's theme to dark mode
-                  } else {
-                    // Set your app's theme to light mode
-                  }
+          child: Consumer<DarkNotifier>(
+            builder: (context, notifier, child) {
+              return Switch(
+                inactiveThumbImage: const AssetImage('assets/toggle_off.jpg'),
+                activeThumbImage: const AssetImage('assets/toggle_on.jpg'),
+                activeColor: Colors.blue[900],
+                inactiveTrackColor: Colors.blue[100],
+                value: notifier.isDark,
+                onChanged: (value) {
+                  notifier.changeTheme();
                 },
               );
             },

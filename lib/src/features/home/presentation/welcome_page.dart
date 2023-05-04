@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kfupm_events/src/constants/constants.dart';
 import 'package:kfupm_events/src/routing/routes.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
+import 'package:provider/provider.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -68,6 +70,9 @@ class WelcomePage extends StatelessWidget {
                     AppRoute.landing.name,
                     params: {'currentIndex': '0'},
                   );
+
+                  Provider.of<DarkNotifier>(context, listen: false)
+                      .changeTheme();
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

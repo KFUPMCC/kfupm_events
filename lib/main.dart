@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:kfupm_events/src/features/events/data/events_data.dart';
 import 'package:kfupm_events/src/routing/routes.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 
@@ -28,7 +29,7 @@ void main() async {
   runApp(const MyApp());
 }
 
-bool isDark = true;
+//bool isDark = true;
 bool isloggedIn = true;
 
 class MyApp extends StatelessWidget {
@@ -36,15 +37,29 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (BuildContext context) {
-        return EventsDataNotifier();
+    return MultiProvider(
+      builder: (context, child) {
+        return MaterialApp.router(
+          theme: Provider.of<DarkNotifier>(context).isDark
+              ? ThemeData.dark()
+              : ThemeData.light(),
+          routerConfig: goRouter,
+          title: 'KFUPM Events',
+          debugShowCheckedModeBanner: false,
+        );
       },
-      child: MaterialApp.router(
-        routerConfig: goRouter,
-        title: 'KFUPM Events',
-        debugShowCheckedModeBanner: false,
-      ),
+      providers: [
+        ChangeNotifierProvider(
+          create: (BuildContext context) {
+            return EventsDataNotifier();
+          },
+        ),
+        ChangeNotifierProvider(
+          create: (BuildContext context) {
+            return DarkNotifier();
+          },
+        ),
+      ],
     );
   }
 }
