@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kfupm_events/src/features/setting/application/show_pop.dart';
 import 'package:provider/provider.dart';
 
 import '../../../theme/dark_notifier.dart';
@@ -9,7 +10,16 @@ class ContactUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        showPop(
+          18,
+          'Got a question or feedback for us?\nWe would love to hear from you!\n',
+          'Email: \n( kfupm-events@gmail.com )\n\n'
+              'Phone: \n( +966 53 209 7215 )\n\n'
+              'Twitter: \n( kfupm_events_app )\n',
+          context,
+        );
+      },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
         child: Row(
