@@ -53,7 +53,7 @@ class RegisterBar extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 20.0),
+            padding: const EdgeInsets.only(top: 10.0),
             child: Text(
               title,
               style: const TextStyle(
@@ -63,7 +63,7 @@ class RegisterBar extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 10.0),
+            padding: const EdgeInsets.only(top: 0.0),
             child: Text(
               '$date - $time - $location',
               style: const TextStyle(
