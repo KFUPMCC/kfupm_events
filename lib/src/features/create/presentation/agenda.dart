@@ -1,16 +1,14 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class Agenda extends StatefulWidget {
+import '../../../theme/dark_notifier.dart';
+
+class Agenda extends StatelessWidget {
   const Agenda({
     Key? key,
   }) : super(key: key);
 
-  @override
-  State<Agenda> createState() => _AgendaState();
-}
-
-class _AgendaState extends State<Agenda> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,6 +22,8 @@ class _AgendaState extends State<Agenda> {
                 .multiline, // Optional, but may be useful to show the number keyboard
 
             decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.white,
               hintText:
                   'Example:\n1) Introduction to linkedIn.\n2) How to attract HRs.\n3) .....',
               focusedBorder: null,
@@ -39,12 +39,22 @@ class _AgendaState extends State<Agenda> {
             left: 20,
             bottom: 110,
             child: Container(
-              decoration: const BoxDecoration(color: Colors.white),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10,
+                vertical: 5,
+              ),
+              decoration: BoxDecoration(
+                color: Provider.of<DarkNotifier>(context).backgroundColor,
+                borderRadius: BorderRadius.circular(20),
+              ),
               child: Row(
-                children: const [
+                children: [
                   Text(
                     'Agenda',
-                    style: TextStyle(fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: Provider.of<DarkNotifier>(context)
+                            .blackLight_whiteDark),
                   ),
                 ],
               ),

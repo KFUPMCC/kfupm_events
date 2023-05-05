@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:kfupm_events/src/constants/constants.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
+import 'package:provider/provider.dart';
 
 class EventReg extends StatelessWidget {
   const EventReg({
@@ -17,7 +19,7 @@ class EventReg extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 60,
-      color: Colors.grey[200],
+      color: Provider.of<DarkNotifier>(context).greyLight_blackDark,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -27,11 +29,13 @@ class EventReg extends StatelessWidget {
               const SizedBox(
                 height: 12,
               ),
-              const Text(
+              Text(
                 'Avaliable seats:',
                 style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.w600,
+                  color:
+                      Provider.of<DarkNotifier>(context).blackLight_whiteDark,
                 ),
               ),
               const SizedBox(
@@ -39,9 +43,11 @@ class EventReg extends StatelessWidget {
               ),
               Text(
                 '$seatNumber',
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
+                  color:
+                      Provider.of<DarkNotifier>(context).blackLight_whiteDark,
                 ),
               ),
             ],

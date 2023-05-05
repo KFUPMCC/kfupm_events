@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kfupm_events/src/features/home/presentation/lower/card/event_card.dart';
-import 'package:kfupm_events/src/removed_widgets/events_row.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/header_section.dart';
-import 'package:kfupm_events/src/routing/routes.dart';
 
 class PastEvents extends StatelessWidget {
   const PastEvents({super.key});
@@ -21,7 +18,11 @@ class PastEvents extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 70, horizontal: 35),
+            padding: const EdgeInsets.only(
+              top: 70,
+              bottom: 70,
+              left: 30,
+            ),
             child: Text(
               'You dont have not attend any events yet',
               textAlign: TextAlign.center,

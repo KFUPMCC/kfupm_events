@@ -18,7 +18,11 @@ class RegisteredEvents extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 70, horizontal: 35),
+            padding: const EdgeInsets.only(
+              top: 70,
+              bottom: 70,
+              left: 30,
+            ),
             child: Text(
               'You dont have any registered events in the future',
               textAlign: TextAlign.center,

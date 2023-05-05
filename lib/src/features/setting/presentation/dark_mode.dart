@@ -11,12 +11,12 @@ class DarkMode extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text(
+        Text(
           'Switch to Dark Mode',
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w500,
-            color: Colors.black,
+            color: Provider.of<DarkNotifier>(context).blackLight_whiteDark,
           ),
         ),
         const SizedBox(

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kfupm_events/src/constants/constants.dart';
+import 'package:provider/provider.dart';
+
+import '../../../theme/dark_notifier.dart';
 
 class SetEventTime extends StatefulWidget {
   const SetEventTime({super.key});
@@ -17,9 +20,9 @@ class _SetEventTimeState extends State<SetEventTime> {
         children: [
           Text(
             time.format(context),
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight: FontWeight.w600,
-              color: Colors.black,
+              color: Provider.of<DarkNotifier>(context).blackLight_whiteDark,
               fontSize: 18,
             ),
           ),
@@ -35,11 +38,19 @@ class _SetEventTimeState extends State<SetEventTime> {
                   initialTime: time,
                   builder: (BuildContext context, Widget? child) {
                     return Theme(
-                      data: ThemeData.light().copyWith(
-                        primaryColor: kGreenColor,
-                        colorScheme:
-                            const ColorScheme.light(primary: kGreenColor),
-                      ),
+                      data: Provider.of<DarkNotifier>(context).isDark
+                          ? ThemeData.dark().copyWith(
+                              primaryColor: kGreenColor,
+                              textTheme: const TextTheme(),
+                              colorScheme: const ColorScheme.dark(
+                                  primary: kGreenColor,
+                                  primaryContainer: kGreenColor),
+                            )
+                          : ThemeData.light().copyWith(
+                              primaryColor: kGreenColor,
+                              colorScheme:
+                                  const ColorScheme.light(primary: kGreenColor),
+                            ),
                       child: child ?? const SizedBox.shrink(),
                     );
                   },

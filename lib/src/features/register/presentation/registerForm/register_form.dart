@@ -8,6 +8,8 @@ import 'package:kfupm_events/src/features/register/presentation/registerForm/maj
 import 'package:kfupm_events/src/features/register/presentation/registerForm/notes_field.dart';
 import 'package:kfupm_events/src/common_widgets/navigate_button.dart';
 import 'package:kfupm_events/src/routing/routes.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
+import 'package:provider/provider.dart';
 
 class RegisterForm extends StatelessWidget {
   const RegisterForm({
@@ -21,14 +23,14 @@ class RegisterForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: screenHeight * 0.75,
+      height: screenHeight * 0.8,
       margin: const EdgeInsets.only(top: 180),
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.only(
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(30),
           topRight: Radius.circular(30),
         ),
-        color: Colors.white,
+        color: Provider.of<DarkNotifier>(context).backgroundColor,
       ),
       child: Stack(
         children: [
@@ -81,6 +83,9 @@ class RegisterForm extends StatelessWidget {
                   navigatePage: () {
                     context.goNamed(AppRoute.registerComplete.name);
                   },
+                ),
+                const SizedBox(
+                  height: 20,
                 ),
               ],
             ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kfupm_events/src/constants/constants.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
+import 'package:provider/provider.dart';
 
 class MajorSelect extends StatefulWidget {
   const MajorSelect({super.key});
@@ -18,15 +20,15 @@ class _MajorSelectState extends State<MajorSelect> {
     return Column(
       //crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             bottom: 10,
           ),
           child: Text(
             'Current Major',
             textAlign: TextAlign.left,
             style: TextStyle(
-              color: Colors.black,
+              color: Provider.of<DarkNotifier>(context).blackLight_whiteDark,
               fontSize: 18,
               fontWeight: FontWeight.w400,
             ),
@@ -35,8 +37,10 @@ class _MajorSelectState extends State<MajorSelect> {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 6),
           decoration: BoxDecoration(
-              color: Colors.grey[100], borderRadius: BorderRadius.circular(5)),
+              color: Provider.of<DarkNotifier>(context).greyLight_blackDark,
+              borderRadius: BorderRadius.circular(5)),
           child: DropdownButton<String>(
+            dropdownColor: Provider.of<DarkNotifier>(context).backgroundColor,
             value: selectedMajor,
             items: allMajorsList
                 .map(
@@ -46,8 +50,11 @@ class _MajorSelectState extends State<MajorSelect> {
                       width: MediaQuery.of(context).size.width * 0.7,
                       child: Text(
                         item,
-                        style: const TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w500),
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: Provider.of<DarkNotifier>(context)
+                                .blackLight_whiteDark),
                       ),
                     ),
                   ),

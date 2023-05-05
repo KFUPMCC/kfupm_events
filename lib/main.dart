@@ -40,9 +40,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       builder: (context, child) {
         return MaterialApp.router(
-          theme: Provider.of<DarkNotifier>(context).isDark
-              ? ThemeData.dark()
-              : ThemeData.light(),
+          theme: ThemeData.light(),
           routerConfig: goRouter,
           title: 'KFUPM Events',
           debugShowCheckedModeBanner: false,

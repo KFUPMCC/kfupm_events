@@ -1,5 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
+import 'package:provider/provider.dart';
 
 class PasswordField extends StatefulWidget {
   const PasswordField({
@@ -25,6 +27,8 @@ class _PasswordFieldState extends State<PasswordField> {
             controller: widget.controller,
             obscureText: _obscureText,
             decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.white,
               hintStyle: const TextStyle(color: Colors.grey, fontSize: 15),
               hintText: '************',
               contentPadding:
@@ -51,14 +55,25 @@ class _PasswordFieldState extends State<PasswordField> {
             left: 20,
             bottom: 39,
             child: Container(
-              decoration: const BoxDecoration(color: Colors.white),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10,
+                vertical: 5,
+              ),
+              decoration: BoxDecoration(
+                color: Provider.of<DarkNotifier>(context).backgroundColor,
+                borderRadius: BorderRadius.circular(20),
+              ),
               child: Row(
-                children: const [
+                children: [
                   Text(
                     'Password',
-                    style: TextStyle(fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: Provider.of<DarkNotifier>(context)
+                          .blackLight_whiteDark,
+                    ),
                   ),
-                  Text(
+                  const Text(
                     '*',
                     style: TextStyle(
                         fontWeight: FontWeight.w600, color: Colors.red),

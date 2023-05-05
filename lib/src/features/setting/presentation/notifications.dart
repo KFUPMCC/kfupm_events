@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kfupm_events/src/constants/constants.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
+import 'package:provider/provider.dart';
 
 class Notifications extends StatefulWidget {
   const Notifications({super.key});
@@ -20,14 +22,24 @@ class _NotificationsState extends State<Notifications> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
-              children: const [
-                Icon(Icons.notifications_active_outlined, size: 25),
-                SizedBox(
+              children: [
+                Icon(
+                  Icons.notifications_active_outlined,
+                  size: 25,
+                  color:
+                      Provider.of<DarkNotifier>(context).blackLight_whiteDark,
+                ),
+                const SizedBox(
                   width: 10,
                 ),
                 Text(
                   'Notifications',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 17,
+                    color:
+                        Provider.of<DarkNotifier>(context).blackLight_whiteDark,
+                  ),
                 )
               ],
             ),

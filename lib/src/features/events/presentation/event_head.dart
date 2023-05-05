@@ -1,5 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
+import 'package:provider/provider.dart';
 
 class EventHead extends StatelessWidget {
   const EventHead({
@@ -25,10 +27,11 @@ class EventHead extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.65,
                 child: Text(
                   title,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color:
+                        Provider.of<DarkNotifier>(context).blackLight_whiteDark,
                   ),
                 ),
               ),
@@ -40,8 +43,10 @@ class EventHead extends StatelessWidget {
                 child: Text(
                   'Hosted by: $host',
                   textAlign: TextAlign.left,
-                  style: const TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.grey),
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Provider.of<DarkNotifier>(context)
+                          .blackLight_whiteDark),
                 ),
               ),
             ],

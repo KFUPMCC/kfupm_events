@@ -1,7 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
+import 'package:provider/provider.dart';
 
-class InputField extends StatefulWidget {
+class InputField extends StatelessWidget {
   const InputField({
     Key? key,
     required this.controller,
@@ -15,11 +17,6 @@ class InputField extends StatefulWidget {
   final TextInputType type;
 
   @override
-  State<InputField> createState() => _InputFieldState();
-}
-
-class _InputFieldState extends State<InputField> {
-  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -27,12 +24,14 @@ class _InputFieldState extends State<InputField> {
         clipBehavior: Clip.none,
         children: [
           TextFormField(
-            controller: widget.controller,
-            keyboardType: widget
-                .type, // Optional, but may be useful to show the number keyboard
+            controller: controller,
+            keyboardType:
+                type, // Optional, but may be useful to show the number keyboard
 
             decoration: InputDecoration(
-              hintText: widget.inputHint,
+              filled: true,
+              fillColor: Colors.white,
+              hintText: inputHint,
               focusedBorder: null,
               hintStyle: const TextStyle(color: Colors.grey, fontSize: 15),
               contentPadding:
@@ -46,12 +45,23 @@ class _InputFieldState extends State<InputField> {
             left: 20,
             bottom: 39,
             child: Container(
-              decoration: const BoxDecoration(color: Colors.white),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10,
+                vertical: 5,
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Provider.of<DarkNotifier>(context).backgroundColor,
+              ),
               child: Row(
                 children: [
                   Text(
-                    widget.inputName,
-                    style: const TextStyle(fontWeight: FontWeight.w600),
+                    inputName,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: Provider.of<DarkNotifier>(context)
+                          .blackLight_whiteDark,
+                    ),
                   ),
                   const Text(
                     '*',

@@ -6,6 +6,8 @@ import 'package:kfupm_events/src/features/events/presentation/myevents/myevents_
 import 'package:kfupm_events/src/features/home/presentation/home_page.dart';
 import 'package:kfupm_events/src/features/login/presentation/login_page.dart';
 import 'package:kfupm_events/src/features/setting/presentation/setting_page.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
+import 'package:provider/provider.dart';
 
 class LandingPage extends StatefulWidget {
   LandingPage({
@@ -28,34 +30,44 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Provider.of<DarkNotifier>(context).backgroundColor,
       body: body[widget.currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: kGreenColor,
-        unselectedItemColor: Colors.grey,
+        unselectedItemColor:
+            Provider.of<DarkNotifier>(context).greyLight_whiteDark,
         currentIndex: widget.currentIndex,
         onTap: (int newIndex) {
           setState(() {
             widget.currentIndex = newIndex;
           });
         },
-        items: const [
+        items: [
           BottomNavigationBarItem(
+            backgroundColor:
+                Provider.of<DarkNotifier>(context).greyLight_blackDark,
             label: 'Home',
-            icon: Icon(
+            icon: const Icon(
               Icons.home,
             ),
           ),
           BottomNavigationBarItem(
+            backgroundColor:
+                Provider.of<DarkNotifier>(context).greyLight_blackDark,
             label: 'Create Event',
-            icon: Icon(Icons.add),
+            icon: const Icon(Icons.add),
           ),
           BottomNavigationBarItem(
+            backgroundColor:
+                Provider.of<DarkNotifier>(context).greyLight_blackDark,
             label: 'My Events',
-            icon: Icon(Icons.bookmark),
+            icon: const Icon(Icons.bookmark),
           ),
           BottomNavigationBarItem(
+            backgroundColor:
+                Provider.of<DarkNotifier>(context).greyLight_blackDark,
             label: 'Setting',
-            icon: Icon(Icons.settings),
+            icon: const Icon(Icons.settings),
           ),
         ],
       ),

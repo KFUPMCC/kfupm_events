@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:kfupm_events/src/constants/constants.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
+import 'package:provider/provider.dart';
 
 class TimeInfo extends StatelessWidget {
   const TimeInfo({
@@ -43,9 +45,10 @@ class TimeInfo extends StatelessWidget {
                 children: [
                   Text(
                     formattedDate,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontWeight: FontWeight.w500,
-                      color: Colors.grey,
+                      color: Provider.of<DarkNotifier>(context)
+                          .greyLight_whiteDark,
                       fontSize: 12,
                     ),
                   ),
@@ -54,9 +57,10 @@ class TimeInfo extends StatelessWidget {
                   ),
                   Text(
                     formattedTime,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      color: Provider.of<DarkNotifier>(context)
+                          .blackLight_whiteDark,
                       fontSize: 15,
                     ),
                   ),

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../../theme/dark_notifier.dart';
 
 class ContactUs extends StatelessWidget {
   const ContactUs({super.key});
@@ -13,20 +16,30 @@ class ContactUs extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
-              children: const [
-                Icon(Icons.contact_support_outlined, size: 25),
-                SizedBox(
+              children: [
+                Icon(
+                  Icons.contact_support_outlined,
+                  size: 25,
+                  color:
+                      Provider.of<DarkNotifier>(context).blackLight_whiteDark,
+                ),
+                const SizedBox(
                   width: 10,
                 ),
                 Text(
                   'Contact Us',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 17,
+                    color:
+                        Provider.of<DarkNotifier>(context).blackLight_whiteDark,
+                  ),
                 )
               ],
             ),
             Icon(
               Icons.arrow_forward_ios,
-              color: Colors.grey[800],
+              color: Provider.of<DarkNotifier>(context).blackLight_whiteDark,
             ),
           ],
         ),

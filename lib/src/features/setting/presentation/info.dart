@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
+import 'package:provider/provider.dart';
 
 class Info extends StatelessWidget {
   const Info({super.key});
@@ -13,20 +15,30 @@ class Info extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
-              children: const [
-                Icon(Icons.info_outline, size: 25),
-                SizedBox(
+              children: [
+                Icon(
+                  Icons.info_outline,
+                  size: 25,
+                  color:
+                      Provider.of<DarkNotifier>(context).blackLight_whiteDark,
+                ),
+                const SizedBox(
                   width: 10,
                 ),
                 Text(
                   'Info',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 17,
+                    color:
+                        Provider.of<DarkNotifier>(context).blackLight_whiteDark,
+                  ),
                 )
               ],
             ),
             Icon(
               Icons.arrow_forward_ios,
-              color: Colors.grey[800],
+              color: Provider.of<DarkNotifier>(context).blackLight_whiteDark,
             ),
           ],
         ),

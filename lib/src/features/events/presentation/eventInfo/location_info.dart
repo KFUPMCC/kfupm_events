@@ -1,5 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:kfupm_events/src/constants/constants.dart';
 
@@ -38,11 +40,12 @@ class LocationInfo extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     'KFUPM Campus',
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
-                      color: Colors.grey,
+                      color: Provider.of<DarkNotifier>(context)
+                          .greyLight_whiteDark,
                       fontSize: 12,
                     ),
                   ),
@@ -51,9 +54,10 @@ class LocationInfo extends StatelessWidget {
                   ),
                   Text(
                     location,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      color: Provider.of<DarkNotifier>(context)
+                          .blackLight_whiteDark,
                       fontSize: 15,
                     ),
                   ),

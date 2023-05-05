@@ -10,6 +10,7 @@ import 'package:kfupm_events/src/features/events/presentation/event_head.dart';
 import 'package:kfupm_events/src/features/events/presentation/event_reg_bar.dart';
 import 'package:kfupm_events/src/features/home/application/type_drawer.dart';
 import 'package:kfupm_events/src/routing/routes.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
 import 'package:provider/provider.dart';
 
 import '../domain/event.dart';
@@ -83,12 +84,12 @@ class EventPage extends StatelessWidget {
             width: double.infinity,
             height: screenHeight * 0.8,
             margin: const EdgeInsets.only(top: 220),
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(30),
                 topRight: Radius.circular(30),
               ),
-              color: Colors.white,
+              color: Provider.of<DarkNotifier>(context).backgroundColor,
             ),
             child: Stack(
               children: [

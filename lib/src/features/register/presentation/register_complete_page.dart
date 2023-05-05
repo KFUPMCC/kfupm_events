@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:kfupm_events/src/common_widgets/navigate_button.dart';
 import 'package:kfupm_events/src/constants/constants.dart';
 import 'package:kfupm_events/src/routing/routes.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
+import 'package:provider/provider.dart';
 
 class RegisterCompletePage extends StatelessWidget {
   const RegisterCompletePage({super.key});
@@ -10,6 +12,7 @@ class RegisterCompletePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Provider.of<DarkNotifier>(context).backgroundColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,

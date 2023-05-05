@@ -9,6 +9,8 @@ import 'package:kfupm_events/src/features/home/presentation/lower/card/event_tit
 import 'package:kfupm_events/src/features/home/presentation/lower/card/event_type.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/head_image.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/host_logo.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../../routing/routes.dart';
 import '../../../../events/domain/event.dart';
@@ -39,7 +41,7 @@ class EventCard extends StatelessWidget {
           width: 270,
           height: 180,
           decoration: BoxDecoration(
-            color: Colors.grey[100],
+            color: Provider.of<DarkNotifier>(context).greyLight_blackDark,
             //border: Border.all(width: 0.2),
             borderRadius: BorderRadius.circular(30),
           ),

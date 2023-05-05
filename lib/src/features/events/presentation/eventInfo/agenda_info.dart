@@ -1,6 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:kfupm_events/src/constants/constants.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
+import 'package:provider/provider.dart';
 
 class AgendaInfo extends StatelessWidget {
   const AgendaInfo({
@@ -32,11 +34,12 @@ class AgendaInfo extends StatelessWidget {
               const SizedBox(
                 width: 10,
               ),
-              const Text(
+              Text(
                 'Agenda',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color:
+                      Provider.of<DarkNotifier>(context).blackLight_whiteDark,
                   fontSize: 15,
                 ),
               ),
@@ -51,9 +54,10 @@ class AgendaInfo extends StatelessWidget {
               children: [
                 Text(
                   agenda,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    color: Colors.black,
+                    color:
+                        Provider.of<DarkNotifier>(context).blackLight_whiteDark,
                     fontSize: 14,
                     height: 1.2,
                   ),

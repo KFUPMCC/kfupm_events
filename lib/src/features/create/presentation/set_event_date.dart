@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kfupm_events/src/constants/constants.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
+import 'package:provider/provider.dart';
 
 class SetEventDate extends StatefulWidget {
   const SetEventDate({super.key});
@@ -17,9 +19,9 @@ class _SetEventDateState extends State<SetEventDate> {
         children: [
           Text(
             '${date.day}/${date.month}/${date.year}',
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight: FontWeight.w600,
-              color: Colors.black,
+              color: Provider.of<DarkNotifier>(context).blackLight_whiteDark,
               fontSize: 18,
             ),
           ),
@@ -37,7 +39,13 @@ class _SetEventDateState extends State<SetEventDate> {
                   lastDate: DateTime(2100),
                   builder: (BuildContext context, Widget? child) {
                     return Theme(
-                      data: ThemeData.light().copyWith(
+                      data: Provider.of<DarkNotifier>(context).isDark ? ThemeData.dark().copyWith(
+                        primaryColor: kGreenColor,
+                        textTheme: const TextTheme(),
+                        colorScheme: const ColorScheme.dark(
+                            primary: kGreenColor,
+                            primaryContainer: kGreenColor),
+                      ) : ThemeData.light().copyWith(
                         primaryColor: kGreenColor,
                         colorScheme:
                             const ColorScheme.light(primary: kGreenColor),
@@ -62,3 +70,5 @@ class _SetEventDateState extends State<SetEventDate> {
     );
   }
 }
+
+

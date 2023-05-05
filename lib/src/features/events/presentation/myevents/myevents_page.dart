@@ -3,6 +3,9 @@ import 'package:kfupm_events/src/features/events/presentation/myevents/bookmarke
 import 'package:kfupm_events/src/features/events/presentation/myevents/events_bar.dart';
 import 'package:kfupm_events/src/features/events/presentation/myevents/past_events.dart';
 import 'package:kfupm_events/src/features/events/presentation/myevents/registered_events.dart';
+import 'package:provider/provider.dart';
+
+import '../../../../theme/dark_notifier.dart';
 
 class MyEvents extends StatelessWidget {
   const MyEvents({super.key});
@@ -11,6 +14,7 @@ class MyEvents extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+      backgroundColor: Provider.of<DarkNotifier>(context).backgroundColor,
       body: Column(
         children: [
           EventsBar(screenHeight: screenHeight),
