@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       builder: (context, child) {
         return MaterialApp.router(
-          theme: ThemeData.light(),
+          theme: ThemeData(fontFamily: 'Open_Sans'),
           routerConfig: goRouter,
           title: 'KFUPM Events',
           debugShowCheckedModeBanner: false,

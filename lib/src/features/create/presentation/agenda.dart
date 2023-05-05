@@ -37,7 +37,7 @@ class Agenda extends StatelessWidget {
           ),
           Positioned(
             left: 20,
-            bottom: 110,
+            bottom: 120,
             child: Container(
               padding: const EdgeInsets.symmetric(
                 horizontal: 10,

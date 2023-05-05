@@ -70,7 +70,9 @@ class WelcomePage extends StatelessWidget {
                     AppRoute.landing.name,
                     params: {'currentIndex': '0'},
                   );
-
+                  // ensure its false, before convert to dark
+                  Provider.of<DarkNotifier>(context, listen: false).isDark =
+                      false;
                   Provider.of<DarkNotifier>(context, listen: false)
                       .changeTheme();
                 },

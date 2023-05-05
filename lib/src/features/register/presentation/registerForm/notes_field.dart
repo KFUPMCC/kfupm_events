@@ -41,11 +41,11 @@ class _NotesFieldState extends State<NotesField> {
           ),
           Positioned(
             left: 20,
-            bottom: 110,
+            bottom: 120,
             child: Container(
               padding: const EdgeInsets.symmetric(
                 horizontal: 10,
-                vertical: 5,
+                vertical: 10,
               ),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),

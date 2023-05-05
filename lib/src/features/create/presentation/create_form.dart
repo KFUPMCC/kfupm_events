@@ -57,7 +57,7 @@ class CreateForm extends StatelessWidget {
                   controller: null,
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
                 const Agenda(),
                 const SizedBox(

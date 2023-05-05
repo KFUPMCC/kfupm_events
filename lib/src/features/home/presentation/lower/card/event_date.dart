@@ -36,9 +36,6 @@ class EventDate extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    const SizedBox(
-                      height: 2,
-                    ),
                     Text(
                       formattedMonth,
                       textAlign: TextAlign.center,
