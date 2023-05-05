@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kfupm_events/src/routing/routes.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
+import 'package:provider/provider.dart';
 
 import '../../../constants/constants.dart';
 
@@ -18,15 +20,20 @@ Future<void> logInAuth(TextEditingController email,
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: const Text('Login Failed',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              )),
-          content: const Text(
+          backgroundColor: Provider.of<DarkNotifier>(context).backgroundColor,
+          title: Text(
+            'Login Failed',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Provider.of<DarkNotifier>(context).blackLight_whiteDark,
+            ),
+          ),
+          content: Text(
             'No user found for that email.',
             textAlign: TextAlign.center,
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(
+                color: Provider.of<DarkNotifier>(context).blackLight_whiteDark),
           ),
           actionsAlignment: MainAxisAlignment.center,
           actions: [
@@ -46,15 +53,21 @@ Future<void> logInAuth(TextEditingController email,
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: const Text('Login Failed',
-              textAlign: TextAlign.center,
-              style: TextStyle(
+          backgroundColor: Provider.of<DarkNotifier>(context).backgroundColor,
+          title: Text(
+            'Login Failed',
+            textAlign: TextAlign.center,
+            style: TextStyle(
                 fontWeight: FontWeight.bold,
-              )),
-          content: const Text(
+                color: Provider.of<DarkNotifier>(context).blackLight_whiteDark),
+          ),
+          content: Text(
             'Wrong password provided for that user.',
             textAlign: TextAlign.center,
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Provider.of<DarkNotifier>(context).blackLight_whiteDark,
+            ),
           ),
           actionsAlignment: MainAxisAlignment.center,
           actions: [
@@ -76,15 +89,21 @@ Future<void> logInAuth(TextEditingController email,
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: const Text('Wrong Input',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              )),
-          content: const Text(
+          backgroundColor: Provider.of<DarkNotifier>(context).backgroundColor,
+          title: Text(
+            'Wrong Input',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Provider.of<DarkNotifier>(context).blackLight_whiteDark,
+            ),
+          ),
+          content: Text(
             'Please fill your email and passwords correctly',
             textAlign: TextAlign.center,
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Provider.of<DarkNotifier>(context).blackLight_whiteDark),
           ),
           actionsAlignment: MainAxisAlignment.center,
           actions: [

@@ -126,7 +126,7 @@ class CreateForm extends StatelessWidget {
 
                 // Create Section
                 NavigateButton(
-                  title: '  Create Event',
+                  title: '      Create Event',
                   widthScale: 0.40,
                   navigatePage: () {
                     context.goNamed(AppRoute.createComplete.name);
