@@ -42,6 +42,12 @@ class WelcomePage extends StatelessWidget {
                     AppRoute.landing.name,
                     params: {'currentIndex': '0'},
                   );
+
+                  // ensure its true, before convert to light
+                  Provider.of<DarkNotifier>(context, listen: false).isDark =
+                      true;
+                  Provider.of<DarkNotifier>(context, listen: false)
+                      .changeTheme();
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

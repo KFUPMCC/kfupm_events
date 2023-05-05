@@ -5,8 +5,6 @@ import 'package:kfupm_events/src/features/home/presentation/lower/card/event_car
 import 'package:kfupm_events/src/features/home/presentation/lower/header_section.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../routing/routes.dart';
-
 class WeekEvents extends StatefulWidget {
   const WeekEvents({
     Key? key,

@@ -26,47 +26,65 @@ class EventCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        context.pushNamed(
-          AppRoute.event.name,
-          params: {
-            'eventIndex': eventIndex.toString(),
+    return Column(
+      children: [
+        const SizedBox(
+          height: 10,
+        ),
+        GestureDetector(
+          onTap: () {
+            context.pushNamed(
+              AppRoute.event.name,
+              params: {
+                'eventIndex': eventIndex.toString(),
+              },
+            );
           },
-        );
-      },
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30),
-        child: Container(
-          width: 270,
-          height: 180,
-          decoration: BoxDecoration(
-            color: Provider.of<DarkNotifier>(context).greyLight_blackDark,
-            //border: Border.all(width: 0.2),
-            borderRadius: BorderRadius.circular(30),
-          ),
-          child: Column(
-            children: [
-              HeadImage(imageURL: event.image),
-              SizedBox(
-                width: double.infinity,
-                height: 70,
-                child: Stack(
-                  clipBehavior: Clip.none,
-                  children: [
-                    HostLogo(logoURL: event.hostLogo),
-                    EventTitle(title: event.title),
-                    EventType(type: event.type),
-                    EventLocation(location: event.building),
-                    EventTime(time: event.time),
-                    EventDate(date: event.date),
-                  ],
-                ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Container(
+              width: 270,
+              height: 180,
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.3),
+                    spreadRadius: 3,
+                    blurRadius: 8,
+                    offset: const Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+                color: Provider.of<DarkNotifier>(context).greyLight_blackDark,
+                //border: Border.all(width: 0.2),
+                borderRadius: BorderRadius.circular(30),
               ),
-            ],
+              child: Column(
+                children: [
+                  HeadImage(imageURL: event.image),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 70,
+                    child: Stack(
+                      clipBehavior: Clip.none,
+                      children: [
+                        HostLogo(logoURL: event.hostLogo),
+                        EventTitle(title: event.title),
+                        EventType(type: event.type),
+                        EventLocation(location: event.building),
+                        EventTime(time: event.time),
+                        EventDate(date: event.date),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
-      ),
+        const SizedBox(
+          height: 10,
+        ),
+      ],
     );
   }
 }
