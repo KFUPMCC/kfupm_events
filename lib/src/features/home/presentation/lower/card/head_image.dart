@@ -15,8 +15,8 @@ class HeadImage extends StatelessWidget {
       height: 110,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(imageURL),
-          fit: BoxFit.cover,
+          image: NetworkImage(imageURL),
+          fit: BoxFit.cover,  
         ),
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(30),

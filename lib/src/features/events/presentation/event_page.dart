@@ -39,7 +39,7 @@ class EventPage extends StatelessWidget {
               // borderRadius: BorderRadius.only(
               //     bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20)),
               image: DecorationImage(
-                image: AssetImage(eventObject.image),
+                image: NetworkImage(eventObject.image),
                 fit: BoxFit.fill,
               ),
             ),

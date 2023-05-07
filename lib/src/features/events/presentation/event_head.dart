@@ -59,7 +59,7 @@ class EventHead extends StatelessWidget {
             height: 70,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(logoURL),
+                image: NetworkImage(logoURL),
                 fit: BoxFit.fill,
               ),
               borderRadius: const BorderRadius.all(

@@ -19,7 +19,7 @@ class HostLogo extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(14)),
           image: DecorationImage(
-            image: AssetImage(logoURL),
+            image: NetworkImage(logoURL),
           ),
         ),
       ),

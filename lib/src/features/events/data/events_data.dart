@@ -8,7 +8,7 @@ class EventsDataNotifier extends ChangeNotifier {
       creator: 'a@a.com',
       id: 1,
       title: 'The Power of LinkedIn',
-      image: 'assets/card.png',
+      image: 'https://imgtr.ee/images/2023/05/07/a39Tn.png',
       agenda: '- Building the perfect Profile page\n'
           '- What to share and what to not? Best way to share it\n'
           '- Linking what you want with what companies search for\n'
@@ -16,7 +16,7 @@ class EventsDataNotifier extends ChangeNotifier {
           '- How to benefit from your connections? How to respond to offers?\n',
       type: EType.workShop,
       host: 'Computer Club',
-      hostLogo: 'assets/host_logo.jpg',
+      hostLogo: 'https://im3.ezgif.com/tmp/ezgif-3-fdbc3ff932.png',
       building: 'Building 70',
       buildingURL: 'https://goo.gl/maps/BCNAGcnpVSEdXVZLA',
       seats: 450,
@@ -27,7 +27,7 @@ class EventsDataNotifier extends ChangeNotifier {
       creator: 'a@a.com',
       id: 2,
       title: 'Automating Using Python',
-      image: 'assets/automating_header.png',
+      image: 'https://imgtr.ee/images/2023/05/07/a3Yam.png',
       agenda: 'KFUPM students and several Professors, Graduates and Staff get\n'
           ' theopportunity to carry out their social responsibility through\n '
           ' participating invariety of field Programs that aim to help patients, elder\n'
@@ -58,7 +58,7 @@ class EventsDataNotifier extends ChangeNotifier {
           '⁃ Presentations⁃ Final Assignment\n',
       type: EType.shortCourse,
       host: 'Computer club & Dr. Khalid Al- Jasser',
-      hostLogo: 'assets/host_logo.jpg',
+      hostLogo: 'https://im3.ezgif.com/tmp/ezgif-3-fdbc3ff932.png',
       building: 'Building 57 - Room 205',
       buildingURL: 'https://goo.gl/maps/VAv7o7a7Pc57TwCL7',
       seats: 60,
@@ -69,7 +69,7 @@ class EventsDataNotifier extends ChangeNotifier {
       creator: 'a@a.com',
       id: 3,
       title: 'Volunteer Day',
-      image: 'assets/volunteer_header.png',
+      image: 'https://imgtr.ee/images/2023/05/07/a36YR.png',
       agenda: 'KFUPM students and several Professors,\n'
           'Graduates and Staff get theopportunity to carry out their \n'
           'social responsibility through participating invariety of field\n'
@@ -88,7 +88,7 @@ class EventsDataNotifier extends ChangeNotifier {
           '-The "Thanks" program- Traffic safety program\n',
       type: EType.festival,
       host: 'Volunteer unit',
-      hostLogo: 'assets/volunteer_logo.png',
+      hostLogo: 'https://im3.ezgif.com/tmp/ezgif-3-ea7b5b57c2.png',
       building: 'Building 11 - Main Hall',
       buildingURL: 'https://goo.gl/maps/kQtsrvEn2nchM7wu9',
       seats: 1000,
