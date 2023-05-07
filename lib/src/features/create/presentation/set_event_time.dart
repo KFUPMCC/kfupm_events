@@ -3,6 +3,7 @@ import 'package:kfupm_events/src/constants/constants.dart';
 import 'package:provider/provider.dart';
 
 import '../../../theme/dark_notifier.dart';
+import '../data/event_time_notifier.dart';
 
 class SetEventTime extends StatefulWidget {
   const SetEventTime({super.key});
@@ -60,6 +61,8 @@ class _SetEventTimeState extends State<SetEventTime> {
                     return;
                   } else {
                     time = newTime;
+                    Provider.of<EventTimeNotifier>(context, listen: false)
+                        .setEventTime(newTime);
                   }
                 });
               },

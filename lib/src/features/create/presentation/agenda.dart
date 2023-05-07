@@ -6,9 +6,9 @@ import '../../../theme/dark_notifier.dart';
 
 class Agenda extends StatelessWidget {
   const Agenda({
-    Key? key,
+    Key? key, required this.controller,
   }) : super(key: key);
-
+  final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,6 +17,7 @@ class Agenda extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           TextFormField(
+            controller: controller,
             maxLines: 5,
             keyboardType: TextInputType
                 .multiline, // Optional, but may be useful to show the number keyboard

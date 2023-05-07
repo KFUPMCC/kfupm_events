@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kfupm_events/src/constants/constants.dart';
+import 'package:kfupm_events/src/features/create/data/event_type_notifier.dart';
 import 'package:provider/provider.dart';
 
 import '../../../theme/dark_notifier.dart';
@@ -67,6 +68,8 @@ class _EventSelectState extends State<EventSelect> {
               setState(
                 () {
                   selectedType = newValue;
+                  Provider.of<EventTypeNotifier>(context, listen: false)
+                      .setEventType(newValue);
                 },
               );
             },

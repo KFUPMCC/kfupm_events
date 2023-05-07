@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:kfupm_events/src/theme/dark_notifier.dart';
 import 'package:provider/provider.dart';
 
-class InputField extends StatelessWidget {
+class InputField extends StatefulWidget {
   const InputField({
     Key? key,
     required this.controller,
@@ -17,6 +17,11 @@ class InputField extends StatelessWidget {
   final TextInputType type;
 
   @override
+  State<InputField> createState() => _InputFieldState();
+}
+
+class _InputFieldState extends State<InputField> {
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -24,15 +29,14 @@ class InputField extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           TextFormField(
-            controller: controller,
-            keyboardType:
-                type, // Optional, but may be useful to show the number keyboard
+            controller: widget.controller,
+            keyboardType: widget
+                .type, // Optional, but may be useful to show the number keyboard
 
             decoration: InputDecoration(
               filled: true,
               fillColor: Colors.white,
-              hintText: inputHint,
-              focusedBorder: null,
+              hintText: widget.inputHint,
               hintStyle: const TextStyle(color: Colors.grey, fontSize: 15),
               contentPadding:
                   const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
@@ -56,7 +60,7 @@ class InputField extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    inputName,
+                    widget.inputName,
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Provider.of<DarkNotifier>(context)
