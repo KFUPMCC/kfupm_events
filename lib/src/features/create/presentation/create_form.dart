@@ -205,7 +205,10 @@ class _CreateFormState extends State<CreateForm> {
                         host: _hostController.text,
                         //hostLogo: _hostLogoController.text,
                         hostLogo: 'assets/kfupm_logo.png',
-                        id: 11,
+                        id: Provider.of<EventsDataNotifier>(context,
+                                listen: false)
+                            .events
+                            .length+1,
                         //image: _imageController.text,
                         image: 'assets/card.png',
                         time: Provider.of<EventTimeNotifier>(context,

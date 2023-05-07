@@ -6,7 +6,7 @@ class EventsDataNotifier extends ChangeNotifier {
   List<Event> events = [
     Event(
       creator: 'a@a.com',
-      id: 0,
+      id: 1,
       title: 'The Power of LinkedIn',
       image: 'assets/card.png',
       agenda: '- Building the perfect Profile page\n'
@@ -25,7 +25,7 @@ class EventsDataNotifier extends ChangeNotifier {
     ),
     Event(
       creator: 'a@a.com',
-      id: 1,
+      id: 2,
       title: 'Automating Using Python',
       image: 'assets/automating_header.png',
       agenda: 'KFUPM students and several Professors, Graduates and Staff get\n'
@@ -67,7 +67,7 @@ class EventsDataNotifier extends ChangeNotifier {
     ),
     Event(
       creator: 'a@a.com',
-      id: 2,
+      id: 3,
       title: 'Volunteer Day',
       image: 'assets/volunteer_header.png',
       agenda: 'KFUPM students and several Professors,\n'
