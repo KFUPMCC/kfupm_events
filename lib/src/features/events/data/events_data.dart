@@ -5,6 +5,7 @@ import 'package:kfupm_events/src/features/events/domain/event.dart';
 class EventsDataNotifier extends ChangeNotifier {
   List<Event> events = [
     Event(
+      creator: 'a@a.com',
       id: 0,
       title: 'The Power of LinkedIn',
       image: 'assets/card.png',
@@ -23,6 +24,7 @@ class EventsDataNotifier extends ChangeNotifier {
       date: DateTime(2023, 2, 13),
     ),
     Event(
+      creator: 'a@a.com',
       id: 1,
       title: 'Automating Using Python',
       image: 'assets/automating_header.png',
@@ -64,6 +66,7 @@ class EventsDataNotifier extends ChangeNotifier {
       date: DateTime(2023, 1, 29),
     ),
     Event(
+      creator: 'a@a.com',
       id: 2,
       title: 'Volunteer Day',
       image: 'assets/volunteer_header.png',

@@ -6,6 +6,7 @@ import 'package:kfupm_events/src/features/events/domain/etype.dart';
 class Event {
   const Event({
     required this.id,
+    required this.creator,
     required this.title,
     required this.image,
     required this.agenda,
@@ -19,6 +20,7 @@ class Event {
     required this.date,
   });
   final int id;
+  final String creator;
   final String title;
   final String image;
   final String agenda;

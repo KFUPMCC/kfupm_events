@@ -11,6 +11,6 @@ class EventTimeNotifier extends ChangeNotifier {
   void resetEventTime() {
     eventTime = TimeOfDay.now();
     notifyListeners();
-    debugPrint('eventTime Disposed 696969');
+    //debugPrint('eventTime Disposed 696969');
   }
 }

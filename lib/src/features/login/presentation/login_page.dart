@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kfupm_events/src/features/create/data/event_creator_notifier.dart';
 import 'package:kfupm_events/src/features/login/application/login_auth.dart';
 import 'package:kfupm_events/src/common_widgets/input_field.dart';
 import 'package:kfupm_events/src/features/login/presentation/need_account.dart';
@@ -101,8 +102,16 @@ class _LoginPageState extends State<LoginPage> {
                             height: 10,
                           ),
                           LoginButton(
-                            login: () => logInAuth(
-                                emailController, passwordController, context),
+                            login: () {
+                              logInAuth(
+                                emailController,
+                                passwordController,
+                                context,
+                              );
+                              Provider.of<EventCreatorNotifier>(context,
+                                      listen: false)
+                                  .setCreator(emailController.text);
+                            },
                           ),
                         ],
                       ),

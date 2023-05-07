@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:kfupm_events/src/features/create/data/event_creator_notifier.dart';
 import 'package:kfupm_events/src/features/create/data/event_date_notifier.dart';
 import 'package:kfupm_events/src/features/create/data/event_time_notifier.dart';
 import 'package:kfupm_events/src/features/create/data/event_type_notifier.dart';
@@ -73,6 +74,11 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (BuildContext context) {
             return EventTimeNotifier();
+          },
+        ),
+        ChangeNotifierProvider(
+          create: (BuildContext context) {
+            return EventCreatorNotifier();
           },
         ),
       ],

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kfupm_events/src/common_widgets/form_divider.dart';
 import 'package:kfupm_events/src/common_widgets/input_field.dart';
+import 'package:kfupm_events/src/features/create/data/event_creator_notifier.dart';
 import 'package:kfupm_events/src/features/create/data/event_date_notifier.dart';
 import 'package:kfupm_events/src/features/create/data/event_time_notifier.dart';
 import 'package:kfupm_events/src/features/create/data/event_type_notifier.dart';
@@ -165,7 +166,7 @@ class _CreateFormState extends State<CreateForm> {
                     // 10
                     SetEventDate(),
                     // 11
-                    SetEventTime(),
+                    const SetEventTime(),
                   ],
                 ),
                 const FormDivider(),
@@ -191,6 +192,9 @@ class _CreateFormState extends State<CreateForm> {
                     } else {
                       Event event = Event(
                         seats: int.parse(_seatsController.text),
+                        creator: Provider.of<EventCreatorNotifier>(context,
+                                listen: false)
+                            .creator!,
                         agenda: _agendaController.text,
                         building: _locationController.text,
                         //buildingURL: _locationLinkController.text,
@@ -212,6 +216,7 @@ class _CreateFormState extends State<CreateForm> {
                                 listen: false)
                             .eventType,
                       );
+
                       // reset event type
                       Provider.of<EventTypeNotifier>(context, listen: false)
                           .resetEventType();
@@ -221,6 +226,9 @@ class _CreateFormState extends State<CreateForm> {
                       // reset event time
                       Provider.of<EventTimeNotifier>(context, listen: false)
                           .resetEventTime();
+                      // reset creator mail
+                      Provider.of<EventCreatorNotifier>(context, listen: false)
+                          .resetEventCreator();
                       // add event
                       Provider.of<EventsDataNotifier>(context, listen: false)
                           .addEvent(event);
