@@ -8,17 +8,17 @@ class NavigateButton extends StatelessWidget {
     Key? key,
     required this.widthScale,
     required this.title,
-    required this.navigatePage,
+    required this.onClick,
   }) : super(key: key);
   final double widthScale;
   final String title;
-  final VoidCallback navigatePage;
+  final VoidCallback onClick;
 
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     return ElevatedButton(
-      onPressed: navigatePage,
+      onPressed: onClick,
       style: ElevatedButton.styleFrom(
         backgroundColor: kGreenColor,
         shape: RoundedRectangleBorder(

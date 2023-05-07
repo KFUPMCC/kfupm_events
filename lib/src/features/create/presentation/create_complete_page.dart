@@ -55,7 +55,7 @@ class CreateCompletePage extends StatelessWidget {
                 NavigateButton(
                   title: '  Home',
                   widthScale: 0.21,
-                  navigatePage: () {
+                  onClick: () {
                     context.goNamed(
                       AppRoute.landing.name,
                       params: {'currentIndex': '0'},

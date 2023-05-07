@@ -80,7 +80,7 @@ class RegisterForm extends StatelessWidget {
                 NavigateButton(
                   title: 'Register Now',
                   widthScale: 0.34,
-                  navigatePage: () {
+                  onClick: () {
                     context.goNamed(AppRoute.registerComplete.name);
                   },
                 ),

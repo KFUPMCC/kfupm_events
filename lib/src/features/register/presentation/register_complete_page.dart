@@ -55,7 +55,7 @@ class RegisterCompletePage extends StatelessWidget {
                 NavigateButton(
                   title: '  Home',
                   widthScale: 0.21,
-                  navigatePage: () {
+                  onClick: () {
                     context.goNamed(
                       AppRoute.landing.name,
                       params: {'currentIndex': '0'},
@@ -65,7 +65,7 @@ class RegisterCompletePage extends StatelessWidget {
                 NavigateButton(
                   title: 'My Events',
                   widthScale: 0.25,
-                  navigatePage: () {
+                  onClick: () {
                     context.goNamed(
                       AppRoute.landing.name,
                       params: {'currentIndex': '2'},
