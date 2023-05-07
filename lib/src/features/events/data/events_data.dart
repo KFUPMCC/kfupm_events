@@ -88,7 +88,7 @@ class EventsDataNotifier extends ChangeNotifier {
           '-The "Thanks" program- Traffic safety program\n',
       type: EType.festival,
       host: 'Volunteer unit',
-      hostLogo: 'https://im3.ezgif.com/tmp/ezgif-3-ea7b5b57c2.png',
+      hostLogo: 'https://i.ibb.co/KqHC0kG/volunteer-logo.png',
       building: 'Building 11 - Main Hall',
       buildingURL: 'https://goo.gl/maps/kQtsrvEn2nchM7wu9',
       seats: 1000,
