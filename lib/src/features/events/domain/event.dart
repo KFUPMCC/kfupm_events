@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+
 import 'package:flutter/material.dart';
 
 import 'package:kfupm_events/src/features/events/domain/etype.dart';
@@ -32,4 +33,22 @@ class Event {
   final int seats;
   final TimeOfDay time;
   final DateTime date;
+
+  Map<String, dynamic> toJson(BuildContext context) {
+    return {
+      'id': id,
+      'creator': creator,
+      'title': title,
+      'image': image,
+      'agenda': agenda,
+      'type': type.toString().split('.')[1],
+      'host': host,
+      'hostLogo': hostLogo,
+      'building': building,
+      'buildingURL': buildingURL,
+      'seats': seats,
+      'time': time.format(context),
+      'date': date.toIso8601String(),
+    };
+  }
 }

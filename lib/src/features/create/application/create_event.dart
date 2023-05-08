@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:kfupm_events/src/features/create/application/add_firestore.dart';
 import 'package:kfupm_events/src/features/create/data/event_creator_notifier.dart';
 import 'package:kfupm_events/src/features/create/data/event_date_notifier.dart';
 import 'package:kfupm_events/src/features/events/data/events_data.dart';
@@ -65,8 +66,10 @@ void CreateEvent(
     // reset creator mail
     Provider.of<EventCreatorNotifier>(context, listen: false)
         .resetEventCreator();
-    // add event
-    Provider.of<EventsDataNotifier>(context, listen: false).addEvent(event);
+    // add event to temp store
+    //Provider.of<EventsDataNotifier>(context, listen: false).addEvent(event);
+    // add data to firebase
+    addEventToFirestore(context, event);
     context.goNamed(AppRoute.createComplete.name);
   }
 }
