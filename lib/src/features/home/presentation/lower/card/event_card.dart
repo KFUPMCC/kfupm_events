@@ -1,6 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:kfupm_events/src/features/events/data/events_data.dart';
 
 import 'package:kfupm_events/src/features/home/presentation/lower/card/event_date.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/event_loaction.dart';
@@ -9,20 +11,16 @@ import 'package:kfupm_events/src/features/home/presentation/lower/card/event_tit
 import 'package:kfupm_events/src/features/home/presentation/lower/card/event_type.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/head_image.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/host_logo.dart';
+import 'package:kfupm_events/src/routing/routes.dart';
 import 'package:kfupm_events/src/theme/dark_notifier.dart';
 import 'package:provider/provider.dart';
-
-import '../../../../../routing/routes.dart';
-import '../../../../events/domain/event.dart';
 
 class EventCard extends StatelessWidget {
   const EventCard({
     Key? key,
-    required this.eventIndex,
     required this.event,
   }) : super(key: key);
-  final int eventIndex;
-  final Event event;
+  final QueryDocumentSnapshot<Object?> event;
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +31,12 @@ class EventCard extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
+            Provider.of<EventsDataNotifier>(context, listen: false)
+                .eventSaver(event);
             context.pushNamed(
               AppRoute.event.name,
               params: {
-                'eventIndex': eventIndex.toString(),
+                'eventIndex': 1.toString(),
               },
             );
           },
@@ -60,19 +60,19 @@ class EventCard extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  HeadImage(imageURL: event.image),
+                  HeadImage(imageURL: event['image']),
                   SizedBox(
                     width: double.infinity,
                     height: 70,
                     child: Stack(
                       clipBehavior: Clip.none,
                       children: [
-                        HostLogo(logoURL: event.hostLogo),
-                        EventTitle(title: event.title),
-                        EventType(type: event.type),
-                        EventLocation(location: event.building),
-                        EventTime(time: event.time),
-                        EventDate(date: event.date),
+                        HostLogo(logoURL: event['hostLogo']),
+                        EventTitle(title: event['title']),
+                        EventType(type: event['type']),
+                        EventLocation(location: event['building']),
+                        EventTime(formattedTime: event['time']),
+                        EventDate(date: event['date']),
                       ],
                     ),
                   ),

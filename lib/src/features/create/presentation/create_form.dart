@@ -178,6 +178,7 @@ class _CreateFormState extends State<CreateForm> {
                       _locationLinkController,
                       _seatsController,
                     );
+                    // eventsStream();
                   },
                 ),
                 const SizedBox(

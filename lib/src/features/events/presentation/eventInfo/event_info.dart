@@ -14,7 +14,7 @@ class EventInfo extends StatelessWidget {
     required this.agenda,
     required this.locationURL,
   }) : super(key: key);
-  final TimeOfDay time;
+  final String time;
   final DateTime date;
   final String location;
   final String agenda;

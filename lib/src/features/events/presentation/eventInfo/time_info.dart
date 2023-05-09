@@ -11,12 +11,12 @@ class TimeInfo extends StatelessWidget {
     required this.time,
     required this.date,
   }) : super(key: key);
-  final TimeOfDay time;
+  final String time;
   final DateTime date;
 
   @override
   Widget build(BuildContext context) {
-    String formattedTime = time.format(context);
+    String formattedTime = time;
     String formattedDate = DateFormat('dd MMM yyyy').format(date);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 32),

@@ -8,12 +8,13 @@ class EventDate extends StatelessWidget {
     Key? key,
     required this.date,
   }) : super(key: key);
-  final DateTime date;
+  final String date;
 
   @override
   Widget build(BuildContext context) {
-    String formattedMonth = DateFormat('MMM').format(date);
-    String formattedDay = DateFormat('dd').format(date);
+    DateTime convertedDate = DateTime.parse(date);
+    String formattedMonth = DateFormat('MMM').format(convertedDate);
+    String formattedDay = DateFormat('dd').format(convertedDate);
     return Positioned(
       left: 8,
       top: 11,

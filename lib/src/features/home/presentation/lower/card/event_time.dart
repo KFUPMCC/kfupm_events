@@ -6,13 +6,12 @@ import 'package:provider/provider.dart';
 class EventTime extends StatelessWidget {
   const EventTime({
     Key? key,
-    required this.time,
+    required this.formattedTime,
   }) : super(key: key);
-  final TimeOfDay time;
+  final String formattedTime;
 
   @override
   Widget build(BuildContext context) {
-    String formattedTime = time.format(context);
     return Positioned(
       left: 58,
       top: 35,

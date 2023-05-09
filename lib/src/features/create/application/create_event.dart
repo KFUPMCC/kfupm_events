@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:kfupm_events/src/features/create/application/add_firestore.dart';
 import 'package:kfupm_events/src/features/create/data/event_creator_notifier.dart';
 import 'package:kfupm_events/src/features/create/data/event_date_notifier.dart';
-import 'package:kfupm_events/src/features/events/data/events_data.dart';
 import 'package:kfupm_events/src/features/events/domain/event.dart';
 import 'package:kfupm_events/src/routing/routes.dart';
 import 'package:provider/provider.dart';
@@ -47,10 +46,7 @@ void CreateEvent(
       date: Provider.of<EventDateNotifier>(context, listen: false).eventDate!,
       host: hostController.text,
       hostLogo: hostLogoController.text,
-      id: Provider.of<EventsDataNotifier>(context, listen: false)
-              .events
-              .length +
-          1,
+      id: 1,
       image: imageController.text,
       time: Provider.of<EventTimeNotifier>(context, listen: false).eventTime!,
       title: titleController.text,
@@ -67,7 +63,7 @@ void CreateEvent(
     Provider.of<EventCreatorNotifier>(context, listen: false)
         .resetEventCreator();
     // add event to temp store
-    //Provider.of<EventsDataNotifier>(context, listen: false).addEvent(event);
+    //Provider.of<EventsDataNotifier>(context, listen: false).addEventToTempRepo(event);
     // add data to firebase
     addEventToFirestore(context, event);
     context.goNamed(AppRoute.createComplete.name);
