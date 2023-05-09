@@ -1,13 +1,28 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:kfupm_events/src/features/events/domain/etype.dart';
-import 'package:kfupm_events/src/features/events/domain/event.dart';
 
 class EventsDataNotifier extends ChangeNotifier {
   QueryDocumentSnapshot<Object?>? event;
-  
+  int? eventId;
+  bool agreeChecked = false;
+
   eventSaver(QueryDocumentSnapshot<Object?> event) {
     this.event = event;
+    notifyListeners();
+  }
+
+  eventIdSaver(int eventId) {
+    this.eventId = eventId;
+    notifyListeners();
+  }
+
+  checkAgreed() {
+    agreeChecked = !agreeChecked;
+    notifyListeners();
+  }
+
+  resetAgreed() {
+    agreeChecked = false;
     notifyListeners();
   }
 }
@@ -37,7 +52,7 @@ class EventsDataNotifier extends ChangeNotifier {
   //     creator: 'a@a.com',
   //     id: 2,
   //     title: 'Automating Using Python',
-  //     image: 'https://imgtr.ee/images/2023/05/07/a3Yam.png',
+  //     image: 'https://i.ibb.co/MPKQd16/automating-header.png',
   //     agenda: 'KFUPM students and several Professors, Graduates and Staff get\n'
   //         ' theopportunity to carry out their social responsibility through\n '
   //         ' participating invariety of field Programs that aim to help patients, elder\n'

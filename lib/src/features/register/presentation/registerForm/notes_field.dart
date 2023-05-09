@@ -1,12 +1,15 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:kfupm_events/src/theme/dark_notifier.dart';
 import 'package:provider/provider.dart';
+
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
 
 class NotesField extends StatefulWidget {
   const NotesField({
     Key? key,
+    required this.notes,
   }) : super(key: key);
+  final TextEditingController notes;
 
   @override
   State<NotesField> createState() => _NotesFieldState();
@@ -21,6 +24,11 @@ class _NotesFieldState extends State<NotesField> {
         clipBehavior: Clip.none,
         children: [
           TextFormField(
+            onChanged: (newValue) {
+              setState(() {
+                widget.notes.text = newValue;
+              });
+            },
             maxLines: 5,
             keyboardType: TextInputType
                 .multiline, // Optional, but may be useful to show the number keyboard

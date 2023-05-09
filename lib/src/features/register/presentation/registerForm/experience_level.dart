@@ -1,10 +1,16 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:kfupm_events/src/constants/constants.dart';
-import 'package:kfupm_events/src/theme/dark_notifier.dart';
 import 'package:provider/provider.dart';
 
+import 'package:kfupm_events/src/constants/constants.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
+
 class ExperienceLevel extends StatefulWidget {
-  const ExperienceLevel({super.key});
+  const ExperienceLevel({
+    Key? key,
+    required this.experience,
+  }) : super(key: key);
+  final TextEditingController experience;
 
   @override
   State<ExperienceLevel> createState() => _ExperienceLevelState();
@@ -55,9 +61,13 @@ class _ExperienceLevelState extends State<ExperienceLevel> {
                   divisions: 4,
                   label: _labels[_currentSliderValue.toInt()],
                   onChanged: (double value) {
-                    setState(() {
-                      _currentSliderValue = value;
-                    });
+                    setState(
+                      () {
+                        _currentSliderValue = value;
+                        widget.experience.text =
+                            _labels[_currentSliderValue.toInt()];
+                      },
+                    );
                   },
                 ),
               ),

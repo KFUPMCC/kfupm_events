@@ -43,6 +43,8 @@ dependencies:
   url_launcher: ^6.0.9
   provider: ^6.0.5
   cloud_firestore: ^4.6.0
+  flutter_cache_manager: ^3.3.0
+  
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kfupm_events/src/constants/constants.dart';
+import 'package:kfupm_events/src/features/events/data/events_data.dart';
 import 'package:kfupm_events/src/theme/dark_notifier.dart';
 import 'package:provider/provider.dart';
 
@@ -107,6 +108,8 @@ class _AgreeConditionState extends State<AgreeCondition> {
               setState(
                 () {
                   isChecked = value;
+                  Provider.of<EventsDataNotifier>(context, listen: false)
+                      .checkAgreed();
                 },
               );
             },

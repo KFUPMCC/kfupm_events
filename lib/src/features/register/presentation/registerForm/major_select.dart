@@ -1,10 +1,16 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:kfupm_events/src/constants/constants.dart';
-import 'package:kfupm_events/src/theme/dark_notifier.dart';
 import 'package:provider/provider.dart';
 
+import 'package:kfupm_events/src/constants/constants.dart';
+import 'package:kfupm_events/src/theme/dark_notifier.dart';
+
 class MajorSelect extends StatefulWidget {
-  const MajorSelect({super.key});
+  MajorSelect({
+    Key? key,
+    required this.currentMajor,
+  }) : super(key: key);
+  TextEditingController? currentMajor;
 
   @override
   State<MajorSelect> createState() => _MajorSelectState();
@@ -64,6 +70,7 @@ class _MajorSelectState extends State<MajorSelect> {
               setState(
                 () {
                   selectedMajor = newValue;
+                  widget.currentMajor!.text = newValue!;
                 },
               );
             },

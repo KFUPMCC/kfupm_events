@@ -120,6 +120,9 @@ class EventPage extends StatelessWidget {
                       child: EventReg(
                         seatNumber: eventNotifier.event!['seats'],
                         goRegPage: () {
+                          Provider.of<EventsDataNotifier>(context,
+                                  listen: false)
+                              .eventIdSaver(eventNotifier.event!['id']);
                           context.pushNamed(
                             AppRoute.register.name,
                             params: {
