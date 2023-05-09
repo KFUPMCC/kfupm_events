@@ -5,12 +5,7 @@ import 'package:kfupm_events/src/features/events/domain/event.dart';
 
 class EventsDataNotifier extends ChangeNotifier {
   QueryDocumentSnapshot<Object?>? event;
-
-  // void addEventToTempRepo(QueryDocumentSnapshot<Object?> event) {
-  //   events.add(event);
-  //   notifyListeners();
-  // }
-
+  
   eventSaver(QueryDocumentSnapshot<Object?> event) {
     this.event = event;
     notifyListeners();

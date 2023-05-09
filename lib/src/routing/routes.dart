@@ -45,14 +45,9 @@ final goRouter = GoRouter(
             },
           ),
           GoRoute(
-            path: 'event/:eventIndex',
+            path: 'event',
             name: AppRoute.event.name,
-            builder: (context, state) {
-              final eventIndex = state.params['eventIndex']!;
-              return EventPage(
-                eventIndex: eventIndex.toString(),
-              );
-            },
+            builder: (context, state) => const EventPage(),
           ),
           GoRoute(
             path: 'create',

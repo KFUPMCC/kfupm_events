@@ -33,12 +33,7 @@ class EventCard extends StatelessWidget {
           onTap: () {
             Provider.of<EventsDataNotifier>(context, listen: false)
                 .eventSaver(event);
-            context.pushNamed(
-              AppRoute.event.name,
-              params: {
-                'eventIndex': 1.toString(),
-              },
-            );
+            context.pushNamed(AppRoute.event.name);
           },
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),

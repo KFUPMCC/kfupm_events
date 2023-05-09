@@ -22,65 +22,130 @@ class _WeekEventsState extends State<WeekEvents> {
         const HeaderSection(
           text: 'Recommended events',
         ),
+        // Widget to retrieve data from firestore
         StreamBuilder<QuerySnapshot>(
-            stream: FirebaseFirestore.instance.collection('Events').snapshots(),
-            builder: (context, snapshot) {
-              if (snapshot.hasError) {
-                return Text('Error: ${snapshot.error}');
-              }
-              if (!snapshot.hasData) {
-                return const Text('No event has been added yet.');
-              }
-              final events = snapshot.data!.docs;
-
-              return SizedBox(
-                width: double.infinity,
-                height: 200,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: events.length,
-                  itemBuilder: (context, index) {
-                    return EventCard(
-                      event: events[index],
-                    );
-                  },
-                ),
+          // Live listening of firestore changes
+          stream: FirebaseFirestore.instance.collection('Events').snapshots(),
+          // if any change occur in stream: path, update below widget after checking or validating
+          builder: (context, snapshot) {
+            // if any error occurs while retrieving events data
+            if (snapshot.hasError) {
+              return Padding(
+                padding: const EdgeInsets.only(left: 14.0),
+                child: Text('Error: ${snapshot.error}'),
               );
-            }),
+            }
+            // if there is no events
+            if (!snapshot.hasData) {
+              return const Padding(
+                padding: EdgeInsets.only(left: 14.0),
+                child: Text('No event has been added yet.'),
+              );
+            }
+
+            // otherwise, store list of documents inside 'events' list
+            // similar to list of Json document objects each as event
+            final events = snapshot.data!.docs;
+
+            return SizedBox(
+              width: double.infinity,
+              height: 200,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: events.length,
+                itemBuilder: (context, index) {
+                  return EventCard(
+                    event: events[index],
+                  );
+                },
+              ),
+            );
+          },
+        ),
         const HeaderSection(
           text: 'Recently added events',
         ),
-        // SizedBox(
-        //   width: double.infinity,
-        //   height: 200,
-        //   child: ListView.builder(
-        //     scrollDirection: Axis.horizontal,
-        //     itemCount: eventNotifier.events.length,
-        //     itemBuilder: (context, index) {
-        //       return EventCard(
-        //         eventIndex: index,
-        //         event: eventNotifier.events[index],
-        //       );
-        //     },
-        //   ),
-        // ),
+        StreamBuilder<QuerySnapshot>(
+          // Live listening of firestore changes
+          stream: FirebaseFirestore.instance.collection('Events').snapshots(),
+          // if any change occur in stream: path, update below widget after checking or validating
+          builder: (context, snapshot) {
+            // if any error occurs while retrieving events data
+            if (snapshot.hasError) {
+              return Padding(
+                padding: const EdgeInsets.only(left: 14.0),
+                child: Text('Error: ${snapshot.error}'),
+              );
+            }
+            // if there is no events
+            if (!snapshot.hasData) {
+              return const Padding(
+                padding: EdgeInsets.only(left: 14.0),
+                child: Text('No event has been added yet.'),
+              );
+            }
+
+            // otherwise, store list of documents inside 'events' list
+            // similar to list of Json document objects each as event
+            final events = snapshot.data!.docs;
+
+            return SizedBox(
+              width: double.infinity,
+              height: 200,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: events.length,
+                itemBuilder: (context, index) {
+                  return EventCard(
+                    event: events[index],
+                  );
+                },
+              ),
+            );
+          },
+        ),
         const HeaderSection(
           text: 'Most Viewed events',
         ),
-        // SizedBox(
-        //   width: double.infinity,
-        //   height: 200,
-        //   child: ListView.builder(
-        //     scrollDirection: Axis.horizontal,
-        //     itemCount: eventNotifier.events.length,
-        //     itemBuilder: (context, index) {
-        //       return EventCard(
-        //         eventIndex: index,
-        //         event: eventNotifier.events[index],
-        //       );
-        //     },
-        //   ),
-        // ),
+        StreamBuilder<QuerySnapshot>(
+          // Live listening of firestore changes
+          stream: FirebaseFirestore.instance.collection('Events').snapshots(),
+          // if any change occur in stream: path, update below widget after checking or validating
+          builder: (context, snapshot) {
+            // if any error occurs while retrieving events data
+            if (snapshot.hasError) {
+              return Padding(
+                padding: const EdgeInsets.only(left: 14.0),
+                child: Text('Error: ${snapshot.error}'),
+              );
+            }
+            // if there is no events
+            if (!snapshot.hasData) {
+              return const Padding(
+                padding: EdgeInsets.only(left: 14.0),
+                child: Text('No event has been added yet.'),
+              );
+            }
+
+            // otherwise, store list of documents inside 'events' list
+            // similar to list of Json document objects each as event
+            final events = snapshot.data!.docs;
+
+            return SizedBox(
+              width: double.infinity,
+              height: 200,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: events.length,
+                itemBuilder: (context, index) {
+                  return EventCard(
+                    event: events[index],
+                  );
+                },
+              ),
+            );
+          },
+        ),
       ],
     );
   }

@@ -17,13 +17,10 @@ import 'package:provider/provider.dart';
 class EventPage extends StatelessWidget {
   const EventPage({
     Key? key,
-    required this.eventIndex,
   }) : super(key: key);
-  final String eventIndex;
 
   @override
   Widget build(BuildContext context) {
-    final int indexEvent = int.parse(eventIndex);
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
@@ -129,8 +126,7 @@ class EventPage extends StatelessWidget {
                               'title': eventNotifier.event!['title'],
                               'date': DateFormat('dd MMM yyyy').format(
                                   DateTime.parse(eventNotifier.event!['date'])),
-                              'time':
-                                  eventNotifier.event!['time'],
+                              'time': eventNotifier.event!['time'],
                               'location': eventNotifier.event!['building'],
                             },
                           );

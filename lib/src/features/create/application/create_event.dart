@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kfupm_events/src/features/create/application/add_firestore.dart';
@@ -21,7 +22,9 @@ void CreateEvent(
   TextEditingController locationController,
   TextEditingController locationLinkController,
   TextEditingController seatsController,
-) {
+) async {
+  final snapshot = await FirebaseFirestore.instance.collection('Events').get();
+  final id = snapshot.size;
   if (titleController.text.isEmpty ||
       imageController.text.isEmpty ||
       agendaController.text.isEmpty ||
@@ -46,7 +49,7 @@ void CreateEvent(
       date: Provider.of<EventDateNotifier>(context, listen: false).eventDate!,
       host: hostController.text,
       hostLogo: hostLogoController.text,
-      id: 1,
+      id: id + 1,
       image: imageController.text,
       time: Provider.of<EventTimeNotifier>(context, listen: false).eventTime!,
       title: titleController.text,
