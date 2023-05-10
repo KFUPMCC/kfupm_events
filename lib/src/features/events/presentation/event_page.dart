@@ -14,6 +14,8 @@ import 'package:kfupm_events/src/routing/routes.dart';
 import 'package:kfupm_events/src/theme/dark_notifier.dart';
 import 'package:provider/provider.dart';
 
+import '../../setting/application/show_pop.dart';
+
 class EventPage extends StatelessWidget {
   const EventPage({
     Key? key,
@@ -120,19 +122,33 @@ class EventPage extends StatelessWidget {
                       child: EventReg(
                         seatNumber: eventNotifier.event!['seats'],
                         goRegPage: () {
-                          Provider.of<EventsDataNotifier>(context,
-                                  listen: false)
-                              .eventIdSaver(eventNotifier.event!['id']);
-                          context.pushNamed(
-                            AppRoute.register.name,
-                            params: {
-                              'title': eventNotifier.event!['title'],
-                              'date': DateFormat('dd MMM yyyy').format(
-                                  DateTime.parse(eventNotifier.event!['date'])),
-                              'time': eventNotifier.event!['time'],
-                              'location': eventNotifier.event!['building'],
-                            },
-                          );
+                          // check if the number of seats bigger than zero
+                          if (Provider.of<EventsDataNotifier>(context,
+                                      listen: false)
+                                  .event!['seats'] >
+                              0) {
+                            Provider.of<EventsDataNotifier>(context,
+                                    listen: false)
+                                .eventIdSaver(eventNotifier.event!['id']);
+                            context.pushNamed(
+                              AppRoute.register.name,
+                              params: {
+                                'title': eventNotifier.event!['title'],
+                                'date': DateFormat('dd MMM yyyy').format(
+                                    DateTime.parse(
+                                        eventNotifier.event!['date'])),
+                                'time': eventNotifier.event!['time'],
+                                'location': eventNotifier.event!['building'],
+                              },
+                            );
+                          } else {
+                            showPop(
+                              14,
+                              'Sorry, There is no available seats',
+                              'Please try again later',
+                              context,
+                            );
+                          }
                         },
                       ),
                     ),

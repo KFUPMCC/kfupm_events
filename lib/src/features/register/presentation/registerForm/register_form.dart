@@ -107,24 +107,25 @@ class _RegisterFormState extends State<RegisterForm> {
                       title: 'Register Now',
                       widthScale: 0.34,
                       onClick: () {
+                        
                         if (agreeCheckNotifier.agreeChecked) {
-                          CreateRegistrant(
-                            context,
-                            _fullNameController,
-                            _emailController,
-                            _phoneNumberController,
-                            _currentMajorController,
-                            _experienceController,
-                            _notesController,
-                          );
-                        } else {
-                          showPop(
-                            14,
-                            'Missing Terms & conditions check',
-                            'Please read terms and conditions\ncarefully before accept.',
-                            context,
-                          );
-                        }
+                            CreateRegistrant(
+                              context,
+                              _fullNameController,
+                              _emailController,
+                              _phoneNumberController,
+                              _currentMajorController,
+                              _experienceController,
+                              _notesController,
+                            );
+                          } else {
+                            showPop(
+                              14,
+                              'Missing Terms & conditions check',
+                              'Please read terms and conditions\ncarefully before accept.',
+                              context,
+                            );
+                          }
                       },
                     );
                   },

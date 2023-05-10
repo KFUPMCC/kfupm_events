@@ -15,7 +15,13 @@ Future<void> addRegistrantToEvent(
   // Transform object ot its json, before sent it to firestore registrants collection
   final registrantJson = registrant.toJson(context);
   // Create document in sub collection as place holder of emails instead of random id
-  final registrantDoc = registrantsCollectionRef.doc(registrant.email.toString());
+  final registrantDoc =
+      registrantsCollectionRef.doc(registrant.email.toString());
   // insert events Object as Json to 'Events' Collection in firestore database
   await registrantDoc.set(registrantJson);
+
+  // decrement number of seats
+  eventDocumentRef.update({
+    'seats': FieldValue.increment(-1),
+  });
 }
