@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/event_card.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/header_section.dart';
 
+import '../../application/type_filter.dart';
+
 class WeekEvents extends StatefulWidget {
   const WeekEvents({
     Key? key,
@@ -14,6 +16,7 @@ class WeekEvents extends StatefulWidget {
 }
 
 class _WeekEventsState extends State<WeekEvents> {
+  int dd = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -52,10 +55,15 @@ class _WeekEventsState extends State<WeekEvents> {
               height: 200,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: events.length,
+                itemCount: events
+                    .where((event) => TypeFilter(context, event['type']))
+                    .length,
                 itemBuilder: (context, index) {
+                  final filteredEvents = events
+                      .where((event) => TypeFilter(context, event['type']))
+                      .toList();
                   return EventCard(
-                    event: events[index],
+                    event: filteredEvents[index],
                   );
                 },
               ),
@@ -94,10 +102,15 @@ class _WeekEventsState extends State<WeekEvents> {
               height: 200,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: events.length,
+                itemCount: events
+                    .where((event) => TypeFilter(context, event['type']))
+                    .length,
                 itemBuilder: (context, index) {
+                  final filteredEvents = events
+                      .where((event) => TypeFilter(context, event['type']))
+                      .toList();
                   return EventCard(
-                    event: events[index],
+                    event: filteredEvents[index],
                   );
                 },
               ),
@@ -136,10 +149,15 @@ class _WeekEventsState extends State<WeekEvents> {
               height: 200,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: events.length,
+                itemCount: events
+                    .where((event) => TypeFilter(context, event['type']))
+                    .length,
                 itemBuilder: (context, index) {
+                  final filteredEvents = events
+                      .where((event) => TypeFilter(context, event['type']))
+                      .toList();
                   return EventCard(
-                    event: events[index],
+                    event: filteredEvents[index],
                   );
                 },
               ),

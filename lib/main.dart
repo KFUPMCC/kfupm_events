@@ -8,6 +8,8 @@ import 'package:kfupm_events/src/features/create/data/event_date_notifier.dart';
 import 'package:kfupm_events/src/features/create/data/event_time_notifier.dart';
 import 'package:kfupm_events/src/features/create/data/event_type_notifier.dart';
 import 'package:kfupm_events/src/features/events/data/events_data.dart';
+import 'package:kfupm_events/src/features/home/data/button_filter_notifier.dart';
+
 import 'package:kfupm_events/src/routing/routes.dart';
 import 'package:kfupm_events/src/theme/dark_notifier.dart';
 import 'package:provider/provider.dart';
@@ -81,6 +83,12 @@ class MyApp extends StatelessWidget {
             return EventCreatorNotifier();
           },
         ),
+        ChangeNotifierProvider(
+          create: (BuildContext context) {
+            return ButtonFilterNotifier();
+          },
+        ),
+        
       ],
     );
   }
