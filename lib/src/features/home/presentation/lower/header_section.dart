@@ -24,7 +24,7 @@ class HeaderSection extends StatelessWidget {
         style: TextStyle(
             color: Provider.of<DarkNotifier>(context).blackLight_whiteDark,
             fontWeight: FontWeight.bold,
-            fontSize: 16),
+            fontSize: 18),
       ),
     );
   }
