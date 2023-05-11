@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 const kGreenColor = Color(0xFF0A9550);
 
+
 const List<String> kfupm_majors = [
   'Select Your Current Major',
   'Petroleum Engineering',

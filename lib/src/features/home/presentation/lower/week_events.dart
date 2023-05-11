@@ -3,9 +3,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/card/event_card.dart';
 import 'package:kfupm_events/src/features/home/presentation/lower/header_section.dart';
+import 'package:provider/provider.dart';
 
 import '../../application/date_compare.dart';
 import '../../application/type_filter.dart';
+import '../../data/button_filter_notifier.dart';
 
 class WeekEvents extends StatefulWidget {
   const WeekEvents({
@@ -56,13 +58,23 @@ class _WeekEventsState extends State<WeekEvents> {
               height: 200,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: events
-                    .where((event) => TypeFilter(context, event['type']))
-                    .length,
+                itemCount: Provider.of<ButtonFilterNotifier>(context)
+                        .checkAllOff()
+                    ? events.length
+                    : events
+                        .where((event) => TypeFilter(context, event['type']))
+                        .length,
                 itemBuilder: (context, index) {
-                  final filteredEvents = events
-                      .where((event) => TypeFilter(context, event['type']))
-                      .toList();
+                  final List<QueryDocumentSnapshot<Object?>> filteredEvents;
+                  if (Provider.of<ButtonFilterNotifier>(context)
+                      .checkAllOff()) {
+                    filteredEvents = events.toList();
+                  } else {
+                    filteredEvents = events
+                        .where((event) => TypeFilter(context, event['type']))
+                        .toList();
+                  }
+
                   return EventCard(
                     event: filteredEvents[index],
                   );
@@ -104,17 +116,26 @@ class _WeekEventsState extends State<WeekEvents> {
               height: 200,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: events
-                    .where((event) =>
-                        TypeFilter(context, event['type']) &&
-                        dateCompare(event['date']))
-                    .length,
+                itemCount:
+                    Provider.of<ButtonFilterNotifier>(context).checkAllOff()
+                        ? events.length
+                        : events
+                            .where((event) =>
+                                TypeFilter(context, event['type']) &&
+                                dateCompare(event['date']))
+                            .length,
                 itemBuilder: (context, index) {
-                  final filteredEvents = events
-                      .where((event) =>
-                          TypeFilter(context, event['type']) &&
-                          dateCompare(event['date']))
-                      .toList();
+                  final List<QueryDocumentSnapshot<Object?>> filteredEvents;
+                  if (Provider.of<ButtonFilterNotifier>(context)
+                      .checkAllOff()) {
+                    filteredEvents = events.toList();
+                  } else {
+                    filteredEvents = events
+                        .where((event) =>
+                            TypeFilter(context, event['type']) &&
+                            dateCompare(event['date']))
+                        .toList();
+                  }
                   return EventCard(
                     event: filteredEvents[index],
                   );
@@ -155,13 +176,22 @@ class _WeekEventsState extends State<WeekEvents> {
               height: 200,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: events
-                    .where((event) => TypeFilter(context, event['type']))
-                    .length,
+                itemCount: Provider.of<ButtonFilterNotifier>(context)
+                        .checkAllOff()
+                    ? events.length
+                    : events
+                        .where((event) => TypeFilter(context, event['type']))
+                        .length,
                 itemBuilder: (context, index) {
-                  final filteredEvents = events.reversed
-                      .where((event) => TypeFilter(context, event['type']))
-                      .toList();
+                  final List<QueryDocumentSnapshot<Object?>> filteredEvents;
+                  if (Provider.of<ButtonFilterNotifier>(context)
+                      .checkAllOff()) {
+                    filteredEvents = events.reversed.toList();
+                  } else {
+                    filteredEvents = events.reversed
+                        .where((event) => TypeFilter(context, event['type']))
+                        .toList();
+                  }
                   return EventCard(
                     event: filteredEvents[index],
                   );

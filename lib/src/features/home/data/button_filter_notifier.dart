@@ -2,11 +2,15 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ButtonFilterNotifier extends ChangeNotifier {
-  bool sport = true;
-  bool shortCourse = true;
-  bool festival = true;
-  bool workshop = true;
-  bool exam = true;
+  bool sport = false;
+  bool shortCourse = false;
+  bool festival = false;
+  bool workshop = false;
+  bool exam = false;
+
+  bool checkAllOff() {
+    return !sport && !shortCourse && !festival && !workshop && !exam;
+  }
 
   void enableDisableFilter(String buttonName) {
     if (buttonName == 'sport') {

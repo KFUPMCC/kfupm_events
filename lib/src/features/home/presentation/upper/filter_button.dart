@@ -25,7 +25,9 @@ class _FilterButtonState extends State<FilterButton> {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: widget.colorState ? kGreenColor : Colors.grey,
+        backgroundColor: widget.colorState
+            ? const Color.fromARGB(255, 6, 70, 38)
+            : kGreenColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
         ),
