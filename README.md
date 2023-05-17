@@ -35,9 +35,7 @@ To get started with the Events App, follow these steps:
 
 1. Clone the repository to your local machine.   " git clone https://github.com/your-username/events-app.git " 
 2. Open the project in your preferred Flutter development environment.
-3. Set up Firebase for your project by creating a new Firebase project and obtaining the necessary configuration files (google-services.json for Android and GoogleService-Info.plist for iOS). Place these files in the appropriate directories as instructed by the Firebase documentation.
-4. Update the Firebase configuration in the app by replacing the placeholder values in the lib/firebase/firebase_config.dart file with your own Firebase configuration.
-5. Build and run the app on your preferred device or emulator.
+3. Build and run the app on your preferred device or emulator.
 
 ## Resources
 A few resources to get you started if this is your first Flutter project:
