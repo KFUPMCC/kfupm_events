@@ -27,7 +27,7 @@ class _WeekEventsState extends State<WeekEvents> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const HeaderSection(
-          text: 'Recommended Events',
+          text: 'Recently added events',
         ),
         StreamBuilder<QuerySnapshot>(
           // Live listening of firestore changes
@@ -68,13 +68,12 @@ class _WeekEventsState extends State<WeekEvents> {
                   final List<QueryDocumentSnapshot<Object?>> filteredEvents;
                   if (Provider.of<ButtonFilterNotifier>(context)
                       .checkAllOff()) {
-                    filteredEvents = events.toList();
+                    filteredEvents = events.reversed.toList();
                   } else {
-                    filteredEvents = events
+                    filteredEvents = events.reversed
                         .where((event) => TypeFilter(context, event['type']))
                         .toList();
                   }
-
                   return EventCard(
                     event: filteredEvents[index],
                   );
@@ -83,6 +82,7 @@ class _WeekEventsState extends State<WeekEvents> {
             );
           },
         ),
+
         const HeaderSection(
           text: 'Events for Today',
         ),
@@ -147,7 +147,7 @@ class _WeekEventsState extends State<WeekEvents> {
           },
         ),
         const HeaderSection(
-          text: 'Recently added events',
+          text: 'Recommended Events',
         ),
         StreamBuilder<QuerySnapshot>(
           // Live listening of firestore changes
@@ -188,12 +188,13 @@ class _WeekEventsState extends State<WeekEvents> {
                   final List<QueryDocumentSnapshot<Object?>> filteredEvents;
                   if (Provider.of<ButtonFilterNotifier>(context)
                       .checkAllOff()) {
-                    filteredEvents = events.reversed.toList();
+                    filteredEvents = events.toList();
                   } else {
-                    filteredEvents = events.reversed
+                    filteredEvents = events
                         .where((event) => TypeFilter(context, event['type']))
                         .toList();
                   }
+
                   return EventCard(
                     event: filteredEvents[index],
                   );
