@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
 import 'package:kfupm_events/src/features/create/data/event_creator_notifier.dart';
 import 'package:kfupm_events/src/features/create/data/event_date_notifier.dart';
 import 'package:kfupm_events/src/features/create/data/event_time_notifier.dart';
@@ -32,7 +33,11 @@ void main() async {
     }
   });
 
-  runApp(const MyApp());
+  // Set preferred orientation to portrait
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(const MyApp());
+  });
 }
 
 //bool isDark = true;
@@ -88,7 +93,6 @@ class MyApp extends StatelessWidget {
             return ButtonFilterNotifier();
           },
         ),
-        
       ],
     );
   }
