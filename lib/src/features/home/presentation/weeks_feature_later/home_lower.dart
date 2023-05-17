@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kfupm_events/src/constants/constants.dart';
-import 'package:kfupm_events/src/features/home/presentation/lower/week_events.dart';
-import 'package:kfupm_events/src/features/home/presentation/lower/week_tab.dart';
+import 'package:kfupm_events/src/features/home/presentation/lower/home_events.dart';
+import 'package:kfupm_events/src/features/home/presentation/weeks_feature_later/week_tab.dart';
 
 class HomeLower extends StatefulWidget {
   const HomeLower({super.key});
@@ -73,13 +73,13 @@ class _HomeLowerState extends State<HomeLower>
                 physics: const NeverScrollableScrollPhysics(),
                 controller: tabController,
                 children: const [
-                  WeekEvents(),
-                  WeekEvents(),
-                  WeekEvents(),
-                  WeekEvents(),
-                  WeekEvents(),
-                  WeekEvents(),
-                  WeekEvents(),
+                  // WeekEvents(),
+                  // WeekEvents(),
+                  // WeekEvents(),
+                  // WeekEvents(),
+                  // WeekEvents(),
+                  // WeekEvents(),
+                  // WeekEvents(),
                 ],
               ),
             ),

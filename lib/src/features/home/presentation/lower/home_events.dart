@@ -9,16 +9,16 @@ import '../../application/date_compare.dart';
 import '../../application/type_filter.dart';
 import '../../data/button_filter_notifier.dart';
 
-class WeekEvents extends StatefulWidget {
-  const WeekEvents({
+class HomeEvents extends StatefulWidget {
+  const HomeEvents({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<WeekEvents> createState() => _WeekEventsState();
+  State<HomeEvents> createState() => _HomeEventsState();
 }
 
-class _WeekEventsState extends State<WeekEvents> {
+class _HomeEventsState extends State<HomeEvents> {
   int dd = 0;
   @override
   Widget build(BuildContext context) {
