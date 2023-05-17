@@ -116,19 +116,21 @@ class _WeekEventsState extends State<WeekEvents> {
               height: 200,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount:
-                    Provider.of<ButtonFilterNotifier>(context).checkAllOff()
-                        ? events.length
-                        : events
-                            .where((event) =>
-                                TypeFilter(context, event['type']) &&
-                                dateCompare(event['date']))
-                            .length,
+                itemCount: Provider.of<ButtonFilterNotifier>(context)
+                        .checkAllOff()
+                    ? events.where((event) => dateCompare(event['date'])).length
+                    : events
+                        .where((event) =>
+                            TypeFilter(context, event['type']) &&
+                            dateCompare(event['date']))
+                        .length,
                 itemBuilder: (context, index) {
                   final List<QueryDocumentSnapshot<Object?>> filteredEvents;
                   if (Provider.of<ButtonFilterNotifier>(context)
                       .checkAllOff()) {
-                    filteredEvents = events.toList();
+                    filteredEvents = events
+                        .where((event) => dateCompare(event['date']))
+                        .toList();
                   } else {
                     filteredEvents = events
                         .where((event) =>
